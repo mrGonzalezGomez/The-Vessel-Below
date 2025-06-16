@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://42y1wr426rj3"]
+
+[ext_resource type="Script" path="res://ScenarioScript/CorridorAreaSS/CorridorInterface.gd" id="1_tuop3"]
+[ext_resource type="Texture2D" uid="uid://c01bj3bhir8yp" path="res://Assets/Scenarios/FirstFloor/CorridorBackground.png" id="2_ckh7w"]
+[ext_resource type="AudioStream" uid="uid://chennsiolhrfx" path="res://Assets/Music/Ambience/Doors/OpeningMetalDoor.mp3" id="3_x6um7"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+"RESET": SubResource("Animation_i8wxg"),
+"fade_in": SubResource("Animation_23miv"),
+"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="CorridorInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tuop3")
+
+[node name="CorridorBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 673.0
+texture = ExtResource("2_ckh7w")
+expand_mode = 1
+
+[node name="EnterBedroom" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 97.0
+offset_right = 979.0
+offset_bottom = 648.0
+
+[node name="TransBedroom" type="Button" parent="EnterBedroom"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 550)
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m8fs0")
+}
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x6um7")
+
+[connection signal="pressed" from="EnterBedroom/TransBedroom" to="." method="_on_trans_bedroom_pressed"]

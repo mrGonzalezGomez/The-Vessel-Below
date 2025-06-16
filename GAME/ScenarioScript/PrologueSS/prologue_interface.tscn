@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgjbgp5lymp7c"]
+
+[ext_resource type="Texture2D" uid="uid://d0lkajw0dk46y" path="res://Assets/Scenarios/Prologue/PrologueScene1.png" id="1_iww33"]
+[ext_resource type="Script" path="res://ScenarioScript/PrologueSS/prologue_interface.gd" id="1_rdoyc"]
+[ext_resource type="Texture2D" uid="uid://cn4iiqo6yi264" path="res://Assets/Dialogue/TextBox/DialogueBox.png" id="2_36inm"]
+[ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="4_ym6rv"]
+[ext_resource type="AudioStream" uid="uid://13sqft6jkcto" path="res://Assets/Music/Ambience/Prologue/Waves.mp3" id="5_v3qfn"]
+[ext_resource type="AudioStream" uid="uid://4gi0bqa1yiww" path="res://Assets/Music/Ambience/Prologue/Alarm.wav" id="6_sin3m"]
+[ext_resource type="AudioStream" uid="uid://bcnedxr2y8ia" path="res://Assets/Music/Ambience/Prologue/Explosion.mp3" id="7_u7p6b"]
+
+[sub_resource type="Animation" id="Animation_koqoa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ll88m"]
+resource_name = "blackout"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b40wc"]
+resource_name = "fade_in"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wgqog"]
+_data = {
+"RESET": SubResource("Animation_koqoa"),
+"blackout": SubResource("Animation_ll88m"),
+"fade_in": SubResource("Animation_b40wc")
+}
+
+[node name="PrologueInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rdoyc")
+
+[node name="PrologueBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 701.0
+texture = ExtResource("1_iww33")
+expand_mode = 1
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 651.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 220.0
+offset_right = 997.0
+offset_bottom = 748.0
+texture = ExtResource("2_36inm")
+expand_mode = 1
+
+[node name="NameBox" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 232.0
+offset_right = 295.0
+offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("4_ym6rv")
+theme_override_font_sizes/normal_font_size = 28
+
+[node name="TextBox" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 282.0
+offset_right = 754.0
+offset_bottom = 381.0
+theme_override_fonts/normal_font = ExtResource("4_ym6rv")
+theme_override_font_sizes/normal_font_size = 28
+
+[node name="ChoiceBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 211.0
+offset_right = 970.0
+offset_bottom = 394.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wgqog")
+}
+
+[node name="WaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v3qfn")
+volume_db = -20.0
+autoplay = true
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sin3m")
+volume_db = -10.0
+autoplay = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_u7p6b")
+volume_db = -20.0

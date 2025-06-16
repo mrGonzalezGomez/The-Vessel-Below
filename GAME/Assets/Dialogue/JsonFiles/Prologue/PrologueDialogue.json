@@ -1,0 +1,138 @@
+[
+  {
+	"Name": "Bartlett",
+	"Text": "Redwater’s running smooth, Lieutenant. Almost feels… too smooth.",
+	"Background": 0,
+	"Choices": [
+	  { "Text": "Superstition doesn’t suit you, Commander.", "Next": 1 },
+	  { "Text": "Still no word from Ford Island?", "Next": 2 },
+	  { "Text": "Maybe we’re just lucky.", "Next": 3 },
+	  { "Text": "(Remain silent)", "Next": 4 }
+	]
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "That’s not superstition, it’s instinct. After Pearl, I trust my gut more than any radar.",
+	"Background": 0,
+	"Next": 5
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "Radio's fuzzy. They’re either too busy… or something’s blocking it.",
+	"Background": 0,
+	"Next": 5
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "There’s no such thing as luck out here. Only decisions and consequences.",
+	"Background": 0,
+	"Next": 5
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "Quiet officers don’t live long. Speak your thoughts, Hale.",
+	"Background": 0,
+	"Next": 5
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "You ever wonder if we’re alone out here? I mean truly alone?",
+	"Background": 0,
+	"Choices": [
+	  { "Text": "You mean enemy subs?", "Next": 6 },
+	  { "Text": "You hear something, sir?", "Next": 7 },
+	  { "Text": "You think we’re being watched?", "Next": 8 }
+	]
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "I’d prefer enemy subs. At least they’re predictable.",
+	"Background": 0,
+	"Next": 9
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "No. That’s what’s troubling me.",
+	"Background": 0,
+	"Next": 9
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "No. I think… we’re being listened to.",
+	"Background": 0,
+	"Next": 9
+  },
+  {
+	"Name": "Porter",
+	"Text": "Sir, there’s something weird in the signal. Repeating pulses… not Morse, not Japanese.",
+	"Background": 1,
+	"Choices": [
+	  { "Text": "Could be distortion from the storm.", "Next": 10 },
+	  { "Text": "Is it English?", "Next": 11 },
+	  { "Text": "Try tuning again.", "Next": 12 }
+	]
+  },
+  {
+	"Name": "Porter",
+	"Text": "Could be. But it’s rhythmic. Feels... deliberate.",
+	"Background": 1,
+	"Next": 13
+  },
+  {
+	"Name": "Porter",
+	"Text": "No language I know, sir. Just… noise that wants to be words.",
+	"Background": 1,
+	"Next": 13
+  },
+  {
+	"Name": "Porter",
+	"Text": "I’ve been trying. It’s not a frequency issue—it’s embedded beneath the broadcast.",
+	"Background": 1,
+	"Next": 13
+  },
+  {
+	"Name": "Porter",
+	"Text": "Sir... it's like it's waiting for someone to respond.",
+	"Background": 1,
+	"Choices": [
+	  { "Text": "Then don’t answer it.", "Next": 14 },
+	  { "Text": "Keep monitoring. Don’t engage.", "Next": 15 },
+	  { "Text": "Mark the frequency. I want that logged.", "Next": 16 }
+	]
+  },
+  {
+	"Name": "Porter",
+	"Text": "Yes, sir. But... what if someone already did?",
+	"Background": 1,
+	"Next": 17
+  },
+  {
+	"Name": "Porter",
+	"Text": "Aye. I’ll keep it off open channel.",
+	"Background": 1,
+	"Next": 17
+  },
+  {
+	"Name": "Porter",
+	"Text": "Understood, sir. Marking now.",
+	"Background": 1,
+	"Next": 17
+  },
+  {
+	"Name": "Narrator",
+	"Text": "*Just as you finish speaking with Porter, alarms blare. A rumble shakes the deck. The ship lurches violently.*",
+	"Background": 1,
+	"Next": 18
+  },
+  {
+	"Name": "Bartlett",
+	"Text": "Brace for impact! Unknown contact—port side—full lock—",
+	"Background": 2,
+	"Next": 19
+  },
+  {
+	"Name": "Narrator",
+	"Text": "*Your vision blurs. Porter screams. Something slams the hull. Darkness.*",
+	"Background": 2
+  }
+]

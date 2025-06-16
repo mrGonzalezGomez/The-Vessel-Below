@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://55lw368fl3j6"]
+
+[ext_resource type="Script" path="res://ScenarioScript/InventorySS/ItemSlot.gd" id="1_51hkh"]
+[ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="2_rqxet"]
+
+[node name="ItemSlot" type="TextureRect"]
+offset_top = -2.0
+offset_right = 1156.0
+offset_bottom = 652.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_51hkh")
+
+[node name="ItemImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -429.0
+offset_top = -318.0
+offset_right = -142.0
+offset_bottom = -69.0
+mouse_filter = 2
+
+[node name="ItemName" type="Label" parent="ItemImage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.002
+anchor_bottom = 0.002
+offset_left = 264.0
+offset_top = 446.502
+offset_right = 951.0
+offset_bottom = 639.502
+theme_override_fonts/font = ExtResource("2_rqxet")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
