@@ -20,6 +20,7 @@ config/icon="res://Assets/Logo/LogoImage.webp"
 MenuPlayer="*res://ScenarioScript/MenuPlayerSS/menu_player.tscn"
 InventoryManager="*res://ScenarioScript/InventorySS/inventory_manager.gd"
 InventoryUi="*res://ScenarioScript/InventorySS/InventoryUI.tscn"
+Flashlight="*res://ScenarioScript/ItemsSS/Flashlight/Flashlight.tscn"
 
 [display]
 

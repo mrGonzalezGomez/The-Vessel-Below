@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://ScenarioScript/BedroomAreaSS/BedroomInterface.gd" id="1_uny11"]
 [ext_resource type="Texture2D" uid="uid://ktj0oi4kw218" path="res://Assets/Scenarios/FirstFloor/BedroomBackground.png" id="2_iuy31"]
 [ext_resource type="AudioStream" uid="uid://idyf1s54ckh8" path="res://Assets/Music/Ambience/Doors/ClosingMetalDoor.mp3" id="3_i1h45"]
-[ext_resource type="Texture2D" uid="uid://b7qtb3352h812" path="res://Assets/Items/Toolbox.png" id="5_pgi4b"]
+[ext_resource type="Texture2D" uid="uid://be2fiufdusimd" path="res://Assets/Items/Flashlight.png" id="3_qko02"]
 [ext_resource type="Texture2D" uid="uid://dmjk4h5a8y3xp" path="res://Assets/Items/PaperNote.png" id="7_vnund"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5u3c"]
-size = Vector2(134, 90)
+size = Vector2(96, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g45pp"]
 size = Vector2(66, 61)
@@ -95,17 +95,17 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 
-[node name="Toolbox" type="Area2D" parent="."]
+[node name="Flashlight" type="Area2D" parent="."]
 position = Vector2(296, 452)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Toolbox"]
-position = Vector2(22, -11)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flashlight"]
+position = Vector2(19, -11)
 shape = SubResource("RectangleShape2D_q5u3c")
 
-[node name="Sprite2D" type="Sprite2D" parent="Toolbox"]
-position = Vector2(21, -10)
-scale = Vector2(0.145508, 0.123047)
-texture = ExtResource("5_pgi4b")
+[node name="Sprite2D" type="Sprite2D" parent="Flashlight"]
+position = Vector2(19.5, -10)
+scale = Vector2(0.0927734, 0.0800781)
+texture = ExtResource("3_qko02")
 
 [node name="Note" type="Area2D" parent="."]
 position = Vector2(926, 518)
@@ -136,5 +136,5 @@ libraries = {
 stream = ExtResource("3_i1h45")
 
 [connection signal="pressed" from="ExitBedroom/TransCorridor" to="." method="_on_trans_corridor_pressed"]
-[connection signal="input_event" from="Toolbox" to="." method="_on_toolbox_input_event"]
+[connection signal="input_event" from="Flashlight" to="." method="_on_flashlight_input_event"]
 [connection signal="input_event" from="Note" to="." method="_on_note_input_event"]

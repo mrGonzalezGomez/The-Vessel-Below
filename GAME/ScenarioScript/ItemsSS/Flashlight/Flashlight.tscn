@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://chq7m7moflv0a"]
+
+[ext_resource type="Texture2D" uid="uid://d3oulo4ixhety" path="res://Assets/Items/Light.png" id="1_o57ye"]
+[ext_resource type="Script" path="res://ScenarioScript/ItemsSS/Flashlight/Flashlight.gd" id="1_th30y"]
+
+[node name="Flashlight" type="CanvasLayer"]
+script = ExtResource("1_th30y")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(599, 317)
+texture = ExtResource("1_o57ye")
