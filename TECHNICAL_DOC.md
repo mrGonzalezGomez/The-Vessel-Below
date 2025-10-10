@@ -15,34 +15,6 @@
 
 ![Image Placeholder – Scene Structure](images/structure_placeholder.png)
 
-res://
-│
-├── Assets/
-│   ├── Dialogue/               # JSON dialogues + assets (Prologue)
-│   ├── Font/                   # Fonts used in UI
-│   ├── Inventory/              # Inventory item icons and data
-│   ├── Items/                  # In-game pickable items
-│   ├── Logo/                   # Logos and title assets
-│   ├── Music/                  # Music and sound effects
-│   └── Scenarios/              # Scene background images
-│
-├── Languages/
-│   └── Translations/           # JSON translation files (EN, FR, ES)
-│
-├── ScenarioScript/
-│   ├── BedroomAreaSS/          # Bedroom area scene and logic
-│   ├── BrightSS/               # Brightness overlay and controls
-│   ├── CorridorAreaSS/         # Corridor area scene and logic
-│   ├── InventorySS/            # Inventory system and UI
-│   ├── ItemsSS/                # Item pickup interactions
-│   ├── MenuPlayerSS/           # Music and audio management
-│   ├── MenuSS/                 # Main menu logic and scene
-│   ├── OptionSS/               # Options interface (Brightness, music, video, languages)
-│   └── PrologueSS/             # Prologue scene (Dialogue + visuals)
-│
-├── default_bus_layout.tres      # Audio bus configuration
-└── export_presets.cfg           # Export configuration
-
 ---
 
 ## Key Scenes

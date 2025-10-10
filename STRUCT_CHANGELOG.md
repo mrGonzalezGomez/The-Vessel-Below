@@ -28,6 +28,7 @@
 - ✅ Recorded short trailer
 - ✅ Exported builds (Linux/Windows/MacOS) and demo ready
 
+
 # Alpha Development
 
 ## Week 1: 
