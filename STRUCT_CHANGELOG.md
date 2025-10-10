@@ -1,8 +1,8 @@
 # Changelog – The Vessel Below
 
-# PRE-Alpha Development
+## PRE-Alpha Development
 
-## Week 1: Discovery & Planning
+#### Week 1: Discovery & Planning
 
 - ✅ Completed Godot tutorials and test project
 - ✅ Story and mood inspired by *Amnesia: The Bunker*
@@ -10,7 +10,7 @@
 - ✅ Collected first visual and audio assets
 - ✅ Planning tools in place (Trello, Git)
 
-## Week 2: Core Gameplay Features
+#### Week 2: Core Gameplay Features
 
 - ✅ Implemented movement and camera
 - ✅ Set up collision and interaction logic
@@ -19,7 +19,7 @@
 - ✅ First scripted narrative events
 - ✅ Trigger zones and basic progression
 
-## Week 3: Finalization
+#### Week 3: Finalization
 
 - ✅ Improved UI/UX (transitions, feedback)
 - ✅ Added more content (rooms, items, audio)
@@ -28,10 +28,9 @@
 - ✅ Recorded short trailer
 - ✅ Exported builds (Linux/Windows/MacOS) and demo ready
 
+## Alpha Development
 
-# Alpha Development
-
-## Week 1: 
+#### Week 1:
 - ✅ Added new flashlight with cursor control (Basic implementation)
 - ✅ Added a brightness slider in settings
 - ✅ Added a sound slider in settings
