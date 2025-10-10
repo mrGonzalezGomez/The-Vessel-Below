@@ -33,14 +33,31 @@ func _process(_delta):
 		else:
 			$DialogueBox/TextBox.visible_characters = len($DialogueBox/TextBox.text)
 
+# 🟩 Load the dialogue for the current language
 func getDialog() -> Array:
 	var f = FileAccess.open(dialogPath, FileAccess.READ)
 	assert(f, "Could not open dialog file!")
 	var json = f.get_as_text()
 	var json_object = JSON.new()
 	json_object.parse(json)
-	var output = json_object.data
-	return output if typeof(output) == TYPE_ARRAY else []
+	var data = json_object.data
+
+	# The JSON file contains multiple language keys
+	if typeof(data) == TYPE_DICTIONARY:
+		var lang = LanguageManager.current_lang
+		if data.has(lang):
+			return data[lang]
+		else:
+			push_warning("Language '%s' not found in dialogue file, using English fallback." % lang)
+			if data.has("English"):
+				return data["English"]
+			else:
+				return []
+	elif typeof(data) == TYPE_ARRAY:
+		# fallback if still using the old JSON format
+		return data
+	else:
+		return []
 
 func nextPhrase():
 	if phraseNum >= dialog.size():
@@ -69,9 +86,16 @@ func nextPhrase():
 		else:
 			$AlarmSound.stop()
 
-	if entry["Text"] == "*Your vision blurs. Porter screams. Something slams the hull. Darkness.*":
-		$ExplosionSound.play()
-		$AnimationFade.play("blackout")
+		var blackout_texts = [
+			"*Your vision blurs. Porter screams. Something slams the hull. Darkness.*",
+			"*Votre vision se trouble. Porter crie. Quelque chose percute la coque. Obscurite.*",
+			"*Tu vision se nubla. Porter grita. Algo golpea el casco. Oscuridad.*"
+		]
+
+		if entry["Text"] in blackout_texts:
+			$ExplosionSound.play()
+			$AnimationFade.play("blackout")
+
 
 	while $DialogueBox/TextBox.visible_characters < len($DialogueBox/TextBox.text):
 		$DialogueBox/TextBox.visible_characters += 1

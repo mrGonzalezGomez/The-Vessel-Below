@@ -1,10 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://baa3b52h1gbic"]
+[gd_scene load_steps=16 format=3 uid="uid://baa3b52h1gbic"]
 
 [ext_resource type="Script" path="res://ScenarioScript/OptionSS/OptionsInterface.gd" id="1_cd81v"]
 [ext_resource type="Texture2D" uid="uid://cb0cmffo2lvki" path="res://Assets/Scenarios/Menu/MenuBackground.png" id="2_sxujj"]
 [ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="3_skal4"]
 [ext_resource type="AudioStream" uid="uid://c5euakdvxgsrm" path="res://Assets/Music/Buttons/ButtonPress.mp3" id="4_nl8t1"]
 [ext_resource type="FontFile" uid="uid://bw2qtiom7ab4x" path="res://Assets/Font/Wide.TTF" id="5_p8elr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnoss"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ors6b"]
+bg_color = Color(0.294118, 0, 0, 0.784314)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfhvm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -58,6 +64,16 @@ offset_bottom = -70.0
 grow_vertical = 0
 theme_override_constants/separation = 30
 alignment = 1
+
+[node name="BrightnessButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.454902, 0.454902, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_skal4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lnoss")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ors6b")
+text = "Brightness"
 
 [node name="MusicButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -113,18 +129,49 @@ theme_override_fonts/font = ExtResource("3_skal4")
 theme_override_font_sizes/font_size = 70
 text = "THE VESSEL BELOW"
 
+[node name="BrightSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 266.0
+offset_right = 495.0
+offset_bottom = 296.0
+min_value = -40.0
+max_value = 0.0
+
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 295.0
-offset_top = 307.0
-offset_right = 493.0
-offset_bottom = 335.0
+offset_top = 334.0
+offset_right = 495.0
+offset_bottom = 364.0
 min_value = -40.0
 max_value = 0.0
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_nl8t1")
 volume_db = -20.0
+
+[node name="BrightnessPercent" type="Label" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 268.0
+offset_right = 435.0
+offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("5_p8elr")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicPercent" type="Label" parent="."]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 337.0
+offset_right = 435.0
+offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("5_p8elr")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResolutionText" type="Label" parent="."]
 layout_mode = 1
@@ -133,39 +180,30 @@ anchor_left = 1.031
 anchor_top = 0.125
 anchor_right = 1.031
 anchor_bottom = 0.125
-offset_left = -878.712
-offset_top = 290.0
-offset_right = -721.712
-offset_bottom = 328.0
+offset_left = -872.712
+offset_top = 316.0
+offset_right = -712.712
+offset_bottom = 356.0
 theme_override_fonts/font = ExtResource("5_p8elr")
 theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicPercent" type="Label" parent="."]
-layout_mode = 2
-offset_left = 349.0
-offset_top = 282.0
-offset_right = 439.0
-offset_bottom = 305.0
-theme_override_fonts/font = ExtResource("5_p8elr")
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LanguageChoise" type="Label" parent="."]
+[node name="LanguageChoice" type="Label" parent="."]
 layout_mode = 0
-offset_left = 298.0
-offset_top = 450.0
-offset_right = 470.0
-offset_bottom = 473.0
+offset_left = 315.0
+offset_top = 470.0
+offset_right = 475.0
+offset_bottom = 510.0
 theme_override_fonts/font = ExtResource("5_p8elr")
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="VBoxContainer/BrightnessButton" to="." method="_on_brightness_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VideoButton" to="." method="_on_video_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/LanguageButton" to="." method="_on_subtitles_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LanguageButton" to="." method="_on_language_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="value_changed" from="BrightSlider" to="." method="_on_bright_slider_value_changed"]
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]

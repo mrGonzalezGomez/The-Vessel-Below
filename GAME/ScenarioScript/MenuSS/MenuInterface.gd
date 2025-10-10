@@ -3,6 +3,14 @@ extends Control
 @onready var fade = $Fade
 @onready var animator = $AnimationFade
 
+func _ready():
+	_update_texts()
+
+func _update_texts():
+	$VBoxContainer/GameButton.text = LanguageManager.t("menu_game")
+	$VBoxContainer/OptionsButton.text = LanguageManager.t("menu_options")
+	$VBoxContainer/QuitButton.text = LanguageManager.t("menu_quit")
+
 func _on_game_button_pressed():
 	$PlaySound.play()
 	animator.play("fade_out")

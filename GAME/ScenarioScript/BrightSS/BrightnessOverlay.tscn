@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://clte1pkvga8oj"]
+
+[ext_resource type="Script" path="res://ScenarioScript/BrightSS/BrightnessOverlay.gd" id="1_t1drb"]
+
+[node name="BrightnessOverlay" type="CanvasLayer"]
+script = ExtResource("1_t1drb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1170.0
+offset_bottom = 665.0
+color = Color(1, 1, 1, 0)

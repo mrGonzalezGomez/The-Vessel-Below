@@ -1,0 +1,31 @@
+{
+  "English": {
+	"menu_game": "New game",
+	"menu_options": "Options",
+	"menu_quit": "Quit",
+	"settings_brightness": "Brightness",
+	"settings_music": "Music",
+	"settings_video": "Video",
+	"settings_language": "Language",
+	"setting_return": "Return"
+  },
+  "Francais": {
+	"menu_game": "Nouveau partie",
+	"menu_options": "Options",
+	"menu_quit": "Quitter",
+	"settings_brightness": "Luminosite",
+	"settings_music": "Musique",
+	"settings_video": "Video",
+	"settings_language": "Langue",
+	"setting_return": "Retour"
+  },
+  "Espanol": {
+	"menu_game": "Nueva partida",
+	"menu_options": "Opciones",
+	"menu_quit": "Salir",
+	"settings_brightness": "Brillo",
+	"settings_music": "Musica",
+	"settings_video": "Video",
+	"settings_language": "Idioma"
+  }
+}
