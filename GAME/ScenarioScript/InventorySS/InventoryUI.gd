@@ -46,9 +46,19 @@ func update_inventory_ui():
 
 func _process(_delta):
 	var current_scene = get_tree().current_scene
+	if not current_scene:
+		return
+
 	var hidden_scenes = [
 		"menu_interface.tscn",
 		"options_interface.tscn",
 		"prologue_interface.tscn"
 	]
-	inventory_button.visible = !hidden_scenes.any(func(scene_name): return current_scene.scene_file_path.ends_with(scene_name))
+
+	var should_hide = false
+	for scene_name in hidden_scenes:
+		if current_scene.scene_file_path.ends_with(scene_name):
+			should_hide = true
+			break
+
+	inventory_button.visible = not should_hide

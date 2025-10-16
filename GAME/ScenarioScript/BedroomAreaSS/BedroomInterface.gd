@@ -2,6 +2,8 @@ extends Control
 
 @onready var fade = $Fade
 @onready var animator = $AnimationFade
+@onready var trans_button = $ExitBedroom/TransCorridor
+@onready var exit_sprite = $Exit
 
 var note_texts = {
 	"English": "If you are reading this, that means that something very wrong happened and you have to escape. I left you a flashlight that could help you. May god help us and good luck.",
@@ -21,6 +23,17 @@ func _ready():
 
 	if InventoryManager.is_note_picked_up(localized_note):
 		$Note.queue_free()
+	
+	trans_button.connect("mouse_entered", Callable(self, "_on_trans_hover_start"))
+	trans_button.connect("mouse_exited", Callable(self, "_on_trans_hover_end"))
+
+	exit_sprite.modulate = Color(1, 1, 1, 0.2)
+
+func _on_trans_hover_start():
+	exit_sprite.modulate = Color(1, 1, 1, 0.4)
+
+func _on_trans_hover_end():
+	exit_sprite.modulate = Color(1, 1, 1, 0.2)
 
 func _on_trans_corridor_pressed():
 	$DoorClosing.play()
@@ -41,9 +54,7 @@ func _on_flashlight_input_event(_viewport, event, _shape_idx):
 		InventoryManager.add_item("Flashlight")
 		$Flashlight.queue_free()
 
-		# Activate global flashlight effect
 		Flashlight.light.visible = true
 		Flashlight.dot.visible = true
 
-		# Hide the mouse
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

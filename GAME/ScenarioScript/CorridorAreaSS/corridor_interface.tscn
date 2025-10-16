@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://42y1wr426rj3"]
+[gd_scene load_steps=9 format=3 uid="uid://42y1wr426rj3"]
 
-[ext_resource type="Script" path="res://ScenarioScript/CorridorAreaSS/CorridorInterface.gd" id="1_tuop3"]
+[ext_resource type="Script" uid="uid://0jrtboaa3ej2" path="res://ScenarioScript/CorridorAreaSS/CorridorInterface.gd" id="1_tuop3"]
 [ext_resource type="Texture2D" uid="uid://c01bj3bhir8yp" path="res://Assets/Scenarios/FirstFloor/CorridorBackground.png" id="2_ckh7w"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_ntqrf"]
 [ext_resource type="AudioStream" uid="uid://chennsiolhrfx" path="res://Assets/Music/Ambience/Doors/OpeningMetalDoor.mp3" id="3_x6um7"]
 
 [sub_resource type="Animation" id="Animation_i8wxg"]
@@ -52,9 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
 _data = {
-"RESET": SubResource("Animation_i8wxg"),
-"fade_in": SubResource("Animation_23miv"),
-"transtion_bedroom": SubResource("Animation_sr8l0")
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
 }
 
 [node name="CorridorInterface" type="Control"]
@@ -73,11 +74,17 @@ offset_bottom = 673.0
 texture = ExtResource("2_ckh7w")
 expand_mode = 1
 
+[node name="Enter_1" type="Sprite2D" parent="."]
+position = Vector2(863.16064, 406.61746)
+rotation = 1.5707964
+scale = Vector2(0.08998311, 0.11419784)
+texture = ExtResource("3_ntqrf")
+
 [node name="EnterBedroom" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 776.0
-offset_top = 97.0
-offset_right = 979.0
+offset_top = 98.0
+offset_right = 976.0
 offset_bottom = 648.0
 
 [node name="TransBedroom" type="Button" parent="EnterBedroom"]
@@ -94,7 +101,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m8fs0")
+&"": SubResource("AnimationLibrary_m8fs0")
 }
 
 [node name="DoorOpening" type="AudioStreamPlayer" parent="."]

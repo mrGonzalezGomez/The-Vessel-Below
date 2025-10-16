@@ -67,15 +67,16 @@ func _on_music_button_pressed():
 
 func _on_video_button_pressed():
 	$ClickSound.play()
-	current_resolution_index += 1
-	if current_resolution_index >= resolutions.size():
-		current_resolution_index = 0
-
+	current_resolution_index = (current_resolution_index + 1) % resolutions.size()
 	var res = resolutions[current_resolution_index]
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	DisplayServer.window_set_size(res)
-	print("Resolution set to: ", res)
 	
+	# Only apply resize if window is not embedded in the editor
+	if not Engine.is_editor_hint():
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_size(res)
+	else:
+		print("Skipping resize in editor (embedded window)")
+
 	$ResolutionText.text = str(res.x) + " x " + str(res.y)
 
 func _on_return_button_pressed():

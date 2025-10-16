@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bqtgh4qb0t552"]
 
-[ext_resource type="Script" path="res://ScenarioScript/MenuSS/MenuInterface.gd" id="1_was4h"]
+[ext_resource type="Script" uid="uid://c2xjvt83gfl5i" path="res://ScenarioScript/MenuSS/MenuInterface.gd" id="1_was4h"]
 [ext_resource type="Texture2D" uid="uid://cb0cmffo2lvki" path="res://Assets/Scenarios/Menu/MenuBackground.png" id="2_0y6vs"]
 [ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="3_4lom2"]
 [ext_resource type="AudioStream" uid="uid://c5euakdvxgsrm" path="res://Assets/Music/Buttons/ButtonPress.mp3" id="4_r6mxk"]
@@ -41,7 +41,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_b6kf8"]
 resource_name = "fade_out"
-length = 4.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,7 +49,7 @@ tracks/0/path = NodePath("Fade:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -57,8 +57,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hdv84"]
 _data = {
-"RESET": SubResource("Animation_ep3f1"),
-"fade_out": SubResource("Animation_b6kf8")
+&"RESET": SubResource("Animation_ep3f1"),
+&"fade_out": SubResource("Animation_b6kf8")
 }
 
 [node name="MenuInterface" type="Control"]
@@ -71,7 +71,7 @@ grow_vertical = 2
 script = ExtResource("1_was4h")
 
 [node name="MenuBackground" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_right = 1168.0
 offset_bottom = 660.0
 texture = ExtResource("2_0y6vs")
@@ -152,7 +152,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_hdv84")
+&"": SubResource("AnimationLibrary_hdv84")
 }
 
 [connection signal="pressed" from="VBoxContainer/GameButton" to="." method="_on_game_button_pressed"]
