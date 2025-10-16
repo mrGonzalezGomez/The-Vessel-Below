@@ -4,7 +4,7 @@
 
 ## Context and Project Goal
 
-This project was born at the beginning of the year when I discovered a strong interest in video game creation. The goal is to use the **Godot Engine** to learn how it works and acquire the fundamental skills of game development.
+This project was born at the beginning of my second year at EPITECH when I discovered a strong interest in video game creation. The goal is to use the **Godot Engine** to learn how it works and acquire the fundamental skills of game development.
 
 ---
 

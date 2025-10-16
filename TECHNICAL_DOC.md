@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-- 🎮 Game Engine: Godot
+- 🎮 Game Engine: Godot v4.5.1.
 - 🐧 OS: Ubuntu Linux
 - 📜 Language: GDScript
 - 🎨 Assets: Handmade or free-use resources
