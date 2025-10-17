@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://2g4sqvirws3x"]
+
+[ext_resource type="Script" uid="uid://bn6hwvh3oc1io" path="res://ScenarioScript/MaintenanceAreaSS/MaintenanceInterface.gd" id="1_868f7"]
+[ext_resource type="Texture2D" uid="uid://b58ln5x8c0q70" path="res://Assets/Scenarios/FirstFloor/MaintenanceBackground.png" id="1_rwx2l"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="2_58siy"]
+[ext_resource type="Texture2D" uid="uid://desdyamfkapro" path="res://Assets/Indication/BackArrow.png" id="3_4juym"]
+[ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="5_bi340"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="MaintenanceInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_868f7")
+
+[node name="MaintenanceBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 673.0
+texture = ExtResource("1_rwx2l")
+expand_mode = 1
+
+[node name="Enter_1" type="Sprite2D" parent="."]
+position = Vector2(733.8854, 451.2526)
+rotation = 0.7853982
+scale = Vector2(0.058675066, 0.074980035)
+texture = ExtResource("2_58siy")
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(560.5, 591.99994)
+scale = Vector2(0.098090254, 0.10937501)
+texture = ExtResource("3_4juym")
+
+[node name="EnterNPC" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 408.0
+offset_right = 784.0
+offset_bottom = 502.0
+
+[node name="TransNPC" type="Button" parent="EnterNPC"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(99, 94)
+layout_mode = 2
+
+[node name="ExitMaintenance" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 541.0
+offset_right = 658.0
+offset_bottom = 648.0
+
+[node name="TransCorridor" type="Button" parent="ExitMaintenance"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(190, 117)
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8fs0")
+}
+
+[node name="MetalWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bi340")
+volume_db = 15.0
+
+[connection signal="pressed" from="EnterNPC/TransNPC" to="." method="_on_trans_npc_pressed"]
+[connection signal="pressed" from="ExitMaintenance/TransCorridor" to="." method="_on_trans_corridor_pressed"]

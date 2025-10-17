@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://42y1wr426rj3"]
+[gd_scene load_steps=11 format=3 uid="uid://42y1wr426rj3"]
 
 [ext_resource type="Script" uid="uid://0jrtboaa3ej2" path="res://ScenarioScript/CorridorAreaSS/CorridorInterface.gd" id="1_tuop3"]
 [ext_resource type="Texture2D" uid="uid://c01bj3bhir8yp" path="res://Assets/Scenarios/FirstFloor/CorridorBackground.png" id="2_ckh7w"]
 [ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_ntqrf"]
 [ext_resource type="AudioStream" uid="uid://chennsiolhrfx" path="res://Assets/Music/Ambience/Doors/OpeningMetalDoor.mp3" id="3_x6um7"]
+[ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="5_t3mmv"]
+[ext_resource type="AudioStream" uid="uid://bf70ft72lulcp" path="res://Assets/Music/Ambience/Item/LightFlicker.mp3" id="6_q8j8c"]
 
 [sub_resource type="Animation" id="Animation_i8wxg"]
 length = 0.001
@@ -80,6 +82,23 @@ rotation = 1.5707964
 scale = Vector2(0.08998311, 0.11419784)
 texture = ExtResource("3_ntqrf")
 
+[node name="Enter_2" type="Sprite2D" parent="."]
+position = Vector2(517, 349)
+scale = Vector2(0.053819455, 0.049107138)
+texture = ExtResource("3_ntqrf")
+
+[node name="EnterMaintenance" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 286.0
+offset_right = 555.0
+offset_bottom = 376.0
+
+[node name="TransMaintenance" type="Button" parent="EnterMaintenance"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(70, 90)
+layout_mode = 2
+
 [node name="EnterBedroom" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 776.0
@@ -107,4 +126,13 @@ libraries = {
 [node name="DoorOpening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x6um7")
 
+[node name="MetalWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t3mmv")
+volume_db = 15.0
+
+[node name="GlitchLight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q8j8c")
+volume_db = 15.0
+
+[connection signal="pressed" from="EnterMaintenance/TransMaintenance" to="." method="_on_trans_maintenance_pressed"]
 [connection signal="pressed" from="EnterBedroom/TransBedroom" to="." method="_on_trans_bedroom_pressed"]
