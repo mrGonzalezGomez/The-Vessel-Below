@@ -36,7 +36,7 @@ Foundational work establishing the core systems, assets and initial scenes.
 Early alpha focused on player tools, accessibility settings and polish; followed by iterative refinements and new content additions.
 
 ### Week 1
-- Added / New features
+- New features
 	- New flashlight with cursor control (initial/basic implementation)
 	- Brightness slider in settings
 	- Sound volume slider in settings
