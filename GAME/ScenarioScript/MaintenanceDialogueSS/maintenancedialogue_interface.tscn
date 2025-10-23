@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk3xsh664a7no"]
+
+[ext_resource type="Script" uid="uid://crn8wy1rl6c36" path="res://ScenarioScript/MaintenanceDialogueSS/MaintenanceDialogueInterface.gd" id="1_jqm5a"]
+[ext_resource type="Texture2D" uid="uid://dsbawbx71jm20" path="res://Assets/Scenarios/FirstFloor/MaintenanceNPC.png" id="2_xv4bp"]
+[ext_resource type="Texture2D" uid="uid://cn4iiqo6yi264" path="res://Assets/Dialogue/TextBox/DialogueBox.png" id="3_hyisd"]
+[ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="4_8emwn"]
+[ext_resource type="AudioStream" uid="uid://8kwu2domfc6y" path="res://Assets/Music/Npc/NpcDeath.mp3" id="5_1s6jm"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="MaintenancedialogueInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqm5a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1170.0
+offset_bottom = 726.0
+texture = ExtResource("2_xv4bp")
+expand_mode = 1
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 220.0
+offset_right = 997.0
+offset_bottom = 748.0
+texture = ExtResource("3_hyisd")
+expand_mode = 1
+
+[node name="NameBox" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 232.0
+offset_right = 295.0
+offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("4_8emwn")
+theme_override_font_sizes/normal_font_size = 28
+
+[node name="TextBox" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 282.0
+offset_right = 754.0
+offset_bottom = 381.0
+theme_override_fonts/normal_font = ExtResource("4_8emwn")
+theme_override_font_sizes/normal_font_size = 28
+
+[node name="ChoiceBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 211.0
+offset_right = 970.0
+offset_bottom = 394.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="NpcDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1s6jm")
+volume_db = -20.0
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8fs0")
+}

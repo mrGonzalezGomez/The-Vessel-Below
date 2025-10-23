@@ -1,0 +1,158 @@
+{
+  "English": [
+	{
+	  "Name": "Holloway",
+	  "Text": "*Gasping, clutching a makeshift bandage on his side* It... it hit us fast. No warning. Just... fire and screaming. My leg... is there anyone else?",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "Hold steady, Officer. I need to know what happened to this carrier.", "Next": 1 },
+		{ "Text": "We'll get you a medic. Where's the rest of your company, Rook?", "Next": 2 },
+		{ "Text": "Don't waste my time, soldier. Did you see who did this?", "Next": 3 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "The blast... it came from below. Not an air strike. Not a torpedo. It tore through the main deck like a ghost... I... I think I saw him... a figure..",
+	  "Background": 0,
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "My company... they were forward in the hangar bay. They went to contain the breach. I... I couldn't keep up after the shrapnel. Thank you, Lieutenant. Here... take this.",
+	  "Background": 0,
+	  "Action": "GIVE_ITEM:HollowayNote",
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Waste your time? I've got a lung full of smoke and a hole in my gut! Find your own answers, Lieutenant! Get out of here!",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "The lights... they flickered and died. Everything went silent. I felt like the whole world was waiting...",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "What about Bartlett? Where did the senior staff go?", "Next": 5 },
+		{ "Text": "Describe this 'figure' you saw. What did he look like?", "Next": 6 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "My head is spinning... Just... check my locker. Maybe there's something... something that makes sense of this. Please.",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "He... he was huge. Wearing something heavy, but no uniform I recognized. And... he was carrying a vile. Not a weapon. A VILE.",
+	  "Background": 0,
+	  "Next": -1
+	}
+  ],
+  "Francais": [
+	{
+	  "Name": "Holloway",
+	  "Text": "*Haletant, agrippant son bandage de fortune* Ca... ca nous a frappe vite. Aucun avertissement. Juste... du feu et des cris. Ma jambe... il y a quelqu'un d'autre ?",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "Tenez bon, Officier. J'ai besoin de savoir ce qui est arrive a ce porte-avions.", "Next": 1 },
+		{ "Text": "On va vous trouver un medecin. Ou est le reste de ta compagnie, Rook ?", "Next": 2 },
+		{ "Text": "Ne me fais pas perdre mon temps, soldat. Tu as vu qui a fait ca ?", "Next": 3 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "L'explosion... elle est venue d'en bas. Pas une frappe aerienne. Pas une torpille. Ca a dechire le pont principal comme un fantome... Je... Je crois que je l'ai vu... une silhouette..",
+	  "Background": 0,
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "(Une toux douloureuse) Ma compagnie... ils etaient a l'avant dans le hangar. Ils sont alles contenir la breche. Je... Je n'ai pas pu suivre apres les eclats. Merci, Lieutenant. Tenez... prenez ca.",
+	  "Background": 0,
+	  "Action": "GIVE_ITEM:HollowayNote",
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Perdre mon temps ? J'ai un poumon plein de fumee et un trou dans l'estomac ! Trouve tes propres reponses, Lieutenant ! Va-t'en d'ici !",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Les lumieres... elles ont clignote et se sont eteintes. Tout est devenu silencieux. J'avais l'impression que le monde entier attendait...",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "Qu'en est-il de Bartlett ? Ou est passe l'etat-major ?", "Next": 5 },
+		{ "Text": "Decris cette 'silhouette' que tu as vue. A quoi ressemblait-elle ?", "Next": 6 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Ma tete tourne... Juste... verifiez mon casier. Il y a peut-etre quelque chose... quelque chose qui donne un sens a tout ca. S'il vous plait.",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Il... il etait enorme. Il portait quelque chose de lourd, mais pas d'uniforme que je reconnaisse. Et... il tenait une fiole. Pas une arme. Une FIOLE.",
+	  "Background": 0,
+	  "Next": -1
+	}
+  ],
+  "Espanol": [
+	{
+	  "Name": "Holloway",
+	  "Text": "*Jadeando, agarrando su vendaje improvisado* Nos... nos golpeo rapido. Sin advertencia. Solo... fuego y gritos. Mi pierna... hay alguien mas?",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "Tranquilicese, Oficial. Necesito saber que paso con este portaaviones.", "Next": 1 },
+		{ "Text": "Le conseguiremos un medico. Donde esta el resto de su compania, Rook?", "Next": 2 },
+		{ "Text": "No me haga perder el tiempo, soldado. Vio quien hizo esto?", "Next": 3 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "La explosion... vino de abajo. No fue un ataque aereo. No fue un torpedo. Atraveso la cubierta principal como un fantasma... Yo... creo que lo vi... una figura..",
+	  "Background": 0,
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "(Una tos dolorosa) Mi compania... estaban adelante en el hangar. Fueron a contener la brecha. Yo... Yo no pude seguirlos despues de la metralla. Gracias, Teniente. Tome... tome esto.",
+	  "Background": 0,
+	  "Action": "GIVE_ITEM:HollowayNote",
+	  "Next": 4
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Hacerle perder el tiempo? Tengo un pulmon lleno de humo y un agujero en el estomago! Encuentre sus propias respuestas, Teniente! Larguese de aqui!",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Las luces... parpadearon y se apagaron. Todo quedo en silencio. Senti como si el mundo entero estuviera esperando...",
+	  "Background": 0,
+	  "Choices": [
+		{ "Text": "Que pasa con Bartlett? Adonde fue el personal superior?", "Next": 5 },
+		{ "Text": "Describa esta 'figura' que vio. Como era?", "Next": 6 }
+	  ]
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "Mi cabeza da vueltas... Solo... revise mi casillero. Quiza haya algo... algo que le de sentido a todo esto. Por favor.",
+	  "Background": 0,
+	  "Next": -1
+	},
+	{
+	  "Name": "Holloway",
+	  "Text": "El... era enorme. Llevaba algo pesado, pero ningun uniforme que yo reconociera. Y... llevaba un vial. No un arma. Un VIAL.",
+	  "Background": 0,
+	  "Next": -1
+	}
+  ]
+}

@@ -33,7 +33,7 @@ func _process(_delta):
 		else:
 			$DialogueBox/TextBox.visible_characters = len($DialogueBox/TextBox.text)
 
-# 🟩 Load the dialogue for the current language
+# Load the dialogue for the current language
 func getDialog() -> Array:
 	var f = FileAccess.open(dialogPath, FileAccess.READ)
 	assert(f, "Could not open dialog file!")
@@ -54,7 +54,6 @@ func getDialog() -> Array:
 			else:
 				return []
 	elif typeof(data) == TYPE_ARRAY:
-		# fallback if still using the old JSON format
 		return data
 	else:
 		return []
