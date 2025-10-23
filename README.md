@@ -45,6 +45,6 @@ Assets: Original creations + free-to-use resources (Kenney, OpenGameArt…)
 
 ## Useful Links
 
-- 📄 [Technical Document](./TECHNICAL_DOC.md)
-- 🛠️ [Development Changelog](./STRUCT_CHANGELOG.md)
+- 📄 [Technical Document](./Technical_Document.md)
+- 🛠️ [Development Changelog](./Changelog.md)
 
