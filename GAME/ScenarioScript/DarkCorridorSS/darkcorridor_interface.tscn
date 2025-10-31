@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwuy2o8xh0a0j"]
+
+[ext_resource type="Script" uid="uid://cnuh0lbcvynr3" path="res://ScenarioScript/DarkCorridorSS/DarkCorridorInterface.gd" id="1_04poe"]
+[ext_resource type="Texture2D" uid="uid://cw0lg2pq7d7re" path="res://Assets/Scenarios/FirstFloor/DarkCorridorBackground.png" id="1_o5jj8"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_hgftr"]
+[ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="4_04poe"]
+[ext_resource type="AudioStream" uid="uid://1lxrhurso5cb" path="res://Assets/Music/Ambience/LightRoom/Sparks.mp3" id="5_i8ijl"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="DarkCorridorInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_04poe")
+
+[node name="CorridorBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 673.0
+texture = ExtResource("1_o5jj8")
+expand_mode = 1
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(519, 381)
+scale = Vector2(0.053819455, 0.049107138)
+texture = ExtResource("3_hgftr")
+
+[node name="EnterCorridor" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 312.0
+offset_right = 556.0
+offset_bottom = 407.0
+
+[node name="TransCorridor" type="Button" parent="EnterCorridor"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8fs0")
+}
+
+[node name="MetalWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_04poe")
+volume_db = 15.0
+
+[node name="Sparks" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i8ijl")
+volume_db = 15.0
+
+[connection signal="pressed" from="EnterCorridor/TransCorridor" to="." method="_on_trans_corridor_pressed"]
