@@ -16,6 +16,8 @@ func add_note(note: String):
 		notes.append(note)
 	if not picked_up_notes.has(note):
 		picked_up_notes.append(note)
+	if not items.has(note):
+		items.append(note)
 
 func has_item(id: String) -> bool:
 	return id in items

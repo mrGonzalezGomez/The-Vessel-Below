@@ -180,18 +180,17 @@ func end_dialogue():
 	if is_instance_valid(GameState):
 		GameState.holloway_dialogue_finished = true
 
-	# Show flashlight
-	toggle_flashlight_visibility(true)
-	# Hide cursor (returning control to the game view)
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
+	# Only show flashlight and hide cursor if player actually has it
+	if InventoryManager.has_item("Flashlight"):
+		toggle_flashlight_visibility(true)
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 	# Play NPC Death Sound
 	npc_death_sound.play()
-	
 	await npc_death_sound.finished
-	
+
 	animator.play("transtion_bedroom") 
 	await animator.animation_finished
-	
+
 	# Change to the next scene
 	get_tree().change_scene_to_file(nextScenePath)

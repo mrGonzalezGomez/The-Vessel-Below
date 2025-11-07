@@ -62,8 +62,8 @@
 - Prologue dynamically selects dialogue text based on current language
 
 ### Inventory System
-- Handles pickup, display, and usage of items
-- Integrated with world interactions (Flashlight, notes)
+- Handles pickup, display, and usage of items and notes
+- Integrated with world interactions (Items, notes)
 
 ### Environmental Interaction
 - Objects trigger sound and visual effects

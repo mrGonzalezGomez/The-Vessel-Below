@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbioafljtadve"]
 
-[ext_resource type="Script" path="res://ScenarioScript/InventorySS/InventoryUI.gd" id="1_ncyq5"]
+[ext_resource type="Script" uid="uid://bgd74x3dkcq56" path="res://ScenarioScript/InventorySS/InventoryUI.gd" id="1_ncyq5"]
 [ext_resource type="Texture2D" uid="uid://bsnlepp448ry8" path="res://Assets/Inventory/InventoryBackground.png" id="2_0kxeu"]
 [ext_resource type="Texture2D" uid="uid://dl2kiw27nu0dy" path="res://Assets/Items/Notebook.png" id="3_p0rfq"]
 [ext_resource type="FontFile" uid="uid://cfawtlhvqxpna" path="res://Assets/Font/Compressed.TTF" id="3_w2xfx"]
@@ -42,19 +42,23 @@ theme_override_font_sizes/normal_font_size = 25
 [node name="ItemsSection" type="GridContainer" parent="InventoryBackground"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.231
-anchor_right = 0.5
-anchor_bottom = 0.231
-offset_left = -0.5
-offset_top = 0.296997
-offset_right = 383.5
-offset_bottom = 403.297
+anchor_left = 0.497
+anchor_top = 0.23
+anchor_right = 0.791
+anchor_bottom = 0.79200006
+offset_left = 0.43200684
+offset_top = 0.009994507
+offset_right = -0.0025634766
+offset_bottom = 0.30395508
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/h_separation = 68
+theme_override_constants/v_separation = 68
 columns = 6
 
 [node name="GridBackground" type="TextureRect" parent="InventoryBackground"]
-layout_mode = 2
+layout_mode = 0
 anchor_left = 0.397
 anchor_top = 0.022
 anchor_right = 0.397
@@ -85,3 +89,20 @@ expand_icon = true
 [node name="InventorySound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hlo4s")
 volume_db = -10.0
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 667.0
+offset_top = 130.0
+offset_right = 731.0
+offset_bottom = 200.0
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 731.0
+offset_top = 130.0
+offset_right = 795.0
+offset_bottom = 200.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

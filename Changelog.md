@@ -54,3 +54,18 @@ Early alpha focused on player tools, accessibility settings and polish; followed
 	- Improved time lapse timing between Menu and Prologue for pacing
 	- Adjusted flashlight power for better gameplay visibility
 	- Added room indicators to highlight interactable areas for navigation
+
+### Week 3
+- New Features
+	- Updated inventory system to include notes and documents
+	- Added new note items with lore, hints and unique assets
+	- Added interactions with notes in the inventory (viewing pages)
+	- Added 2 new rooms in the corridor area (Dark Corridor and Motor Room stairs) with new sound effects and visual assets
+
+- Refinements and Enhancements
+	- Removed arrow indicator for NPC and items/notes to increase immersion (Temporarily -> Will be reworked later with a accessibility toggle)
+
+- Bug Fixes
+	- Fixed cursor removal bug when finishing the Maintenance Bay dialogue
+	- Fixed flashlight flicker effect bug when entering new rooms
+	- Fixed cursor and lighting display when opening inventory

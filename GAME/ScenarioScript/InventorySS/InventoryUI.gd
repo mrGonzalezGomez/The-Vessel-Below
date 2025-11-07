@@ -7,6 +7,23 @@ const ITEM_SLOT_SCENE = preload("res://ScenarioScript/InventorySS/ItemSlot.tscn"
 @onready var inventory_button = $InventoryButton
 @onready var inventory_background = $InventoryBackground
 @onready var inventory_sound = $InventorySound
+@onready var button = $Button
+@onready var button2 = $Button2
+
+var note_texts = {
+		"English": "If you are reading this, that means that something very wrong happened and you have to escape. I left you a flashlight that could help you. May god help us and good luck.",
+		"Francais": "Si vous lisez ceci, cela signifie que quelque chose de tres grave s'est produit et que vous devez vous echapper. Je vous ai laisse une lampe de poche qui pourrait vous aider. Que Dieu nous aide et bonne chance.",
+		"Espanol": "Si estas leyendo esto, significa que algo muy malo ha sucedido y debes escapar. Te deje una linterna que podria ayudarte. Que Dios nos ayude y buena suerte."
+}
+
+var holloway_note_texts = {
+		"English": "The lights... they flickered and died. Everything went silent. I felt like the whole world was waiting... Deck 4, Central Engine Room Access is a death trap. Avoid. Heard a sound like a ship's bell chiming repeatedly from the lower decks. -Rook.",
+		"Francais": "Les lumieres... elles ont clignote et se sont eteintes. Tout est devenu silencieux. J'avais l'impression que le monde entier attendait... Pont 4, l'acces a la salle des machines centrale est un piege mortel. Evitez. J'ai entendu un son comme une cloche de navire sonner a plusieurs reprises depuis les ponts inferieurs. -Rook.",
+		"Espanol": "Las luces... parpadearon y se apagaron. Todo quedo en silencio. Senti como si el mundo entier estuviera esperando... Cubierta 4, el acceso a la sala de maquinas central es una trampa mortal. Evitar. Escuche un sonido como el de una campana de barco sonando repetidamente desde las cubiertas inferiores. -Rook."
+}
+
+var button_visible := false
+var button2_visible := false
 
 func _ready():
 	inventory_background.visible = false
@@ -27,14 +44,22 @@ func toggle_inventory():
 	if inventory_background.visible:
 		inventory_background.mouse_filter = Control.MOUSE_FILTER_STOP
 		inventory_sound.play()
+		# Show the cursor while the inventory is open
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		inventory_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		# Hide the cursor when inventory is closed, only if player has the flashlight
+		if InventoryManager.has_item("Flashlight"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 	update_inventory_ui()
 
 func update_inventory_ui():
-	pages_section.text = ""
-	for note in InventoryManager.notes:
-		pages_section.text += "- " + note + "\n"
+	# Clear PagesSection
+	if pages_section:
+		pages_section.text = ""
+		button_visible = false
+		button2_visible = false
 
 	for child in items_section.get_children():
 		child.queue_free()
@@ -62,3 +87,19 @@ func _process(_delta):
 			break
 
 	inventory_button.visible = not should_hide
+
+func _on_button_pressed() -> void:
+	# Toggle note_texts display
+	button_visible = !button_visible
+	if button_visible:
+		pages_section.text = note_texts.get(LanguageManager.current_lang, note_texts["English"])
+	else:
+		pages_section.text = ""
+
+func _on_button_2_pressed() -> void:
+	# Toggle holloway_note_texts display
+	button2_visible = !button2_visible
+	if button2_visible:
+		pages_section.text = holloway_note_texts.get(LanguageManager.current_lang, holloway_note_texts["English"])
+	else:
+		pages_section.text = ""
