@@ -109,8 +109,8 @@ position = Vector2(19, -11)
 shape = SubResource("RectangleShape2D_q5u3c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Flashlight"]
-position = Vector2(19.5, -10)
-scale = Vector2(0.0927734, 0.0800781)
+position = Vector2(19.500002, -10)
+scale = Vector2(0.086914055, 0.0800781)
 texture = ExtResource("3_qko02")
 
 [node name="Note" type="Area2D" parent="."]
