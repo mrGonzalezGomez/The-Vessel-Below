@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chq7m7moflv0a"]
+[gd_scene load_steps=5 format=3 uid="uid://chq7m7moflv0a"]
 
-[ext_resource type="Script" path="res://ScenarioScript/ItemsSS/Flashlight/Flashlight.gd" id="1_th30y"]
+[ext_resource type="Script" uid="uid://rqy57ukjtqxl" path="res://ScenarioScript/ItemsSS/Flashlight/Flashlight.gd" id="1_th30y"]
 [ext_resource type="Texture2D" uid="uid://d3oulo4ixhety" path="res://Assets/Items/Light.png" id="2_m4yq4"]
 [ext_resource type="Texture2D" uid="uid://dkpfvvtxrtbjp" path="res://Assets/Items/YellowishCircle.png" id="3_p3jn6"]
+[ext_resource type="AudioStream" uid="uid://63g6o64f61x2" path="res://Assets/Music/Items/FlashlightClick.mp3" id="4_n8pls"]
 
 [node name="Flashlight" type="CanvasLayer"]
 script = ExtResource("1_th30y")
@@ -15,3 +16,7 @@ texture = ExtResource("2_m4yq4")
 position = Vector2(600, 324)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_p3jn6")
+
+[node name="FlashlightClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n8pls")
+volume_db = 5.0

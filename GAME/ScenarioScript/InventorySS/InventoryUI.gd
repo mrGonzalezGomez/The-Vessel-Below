@@ -6,7 +6,9 @@ const ITEM_SLOT_SCENE = preload("res://ScenarioScript/InventorySS/ItemSlot.tscn"
 @onready var items_section = $InventoryBackground/ItemsSection
 @onready var inventory_button = $InventoryButton
 @onready var inventory_background = $InventoryBackground
-@onready var inventory_sound = $InventorySound
+@onready var inventory_open = $InventoryOpen
+@onready var inventory_close = $InventoryClose
+@onready var page_click = $PageClick
 @onready var button = $Button
 @onready var button2 = $Button2
 
@@ -43,11 +45,12 @@ func toggle_inventory():
 
 	if inventory_background.visible:
 		inventory_background.mouse_filter = Control.MOUSE_FILTER_STOP
-		inventory_sound.play()
+		inventory_open.play()
 		# Show the cursor while the inventory is open
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		inventory_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		inventory_close.play()
 		# Hide the cursor when inventory is closed, only if player has the flashlight
 		if InventoryManager.has_item("Flashlight"):
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -92,6 +95,7 @@ func _on_button_pressed() -> void:
 	# Toggle note_texts display
 	button_visible = !button_visible
 	if button_visible:
+		page_click.play()
 		pages_section.text = note_texts.get(LanguageManager.current_lang, note_texts["English"])
 	else:
 		pages_section.text = ""
@@ -100,6 +104,7 @@ func _on_button_2_pressed() -> void:
 	# Toggle holloway_note_texts display
 	button2_visible = !button2_visible
 	if button2_visible:
+		page_click.play()
 		pages_section.text = holloway_note_texts.get(LanguageManager.current_lang, holloway_note_texts["English"])
 	else:
 		pages_section.text = ""

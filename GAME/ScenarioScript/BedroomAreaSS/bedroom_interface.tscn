@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ktj0oi4kw218" path="res://Assets/Scenarios/FirstFloor/BedroomBackground.png" id="2_iuy31"]
 [ext_resource type="AudioStream" uid="uid://idyf1s54ckh8" path="res://Assets/Music/Ambience/Doors/ClosingMetalDoor.mp3" id="3_i1h45"]
 [ext_resource type="Texture2D" uid="uid://desdyamfkapro" path="res://Assets/Indication/BackArrow.png" id="3_io1r0"]
-[ext_resource type="Texture2D" uid="uid://be2fiufdusimd" path="res://Assets/Items/Flashlight.png" id="3_qko02"]
+[ext_resource type="Texture2D" uid="uid://cjtumdrtiq7qh" path="res://Assets/Items/Flashlight.png" id="3_qko02"]
 [ext_resource type="Texture2D" uid="uid://dmjk4h5a8y3xp" path="res://Assets/Items/PaperNote.png" id="7_vnund"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5u3c"]
