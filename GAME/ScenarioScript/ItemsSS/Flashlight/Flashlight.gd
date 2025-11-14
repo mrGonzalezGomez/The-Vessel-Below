@@ -4,6 +4,13 @@ extends CanvasLayer
 @onready var dot: PointLight2D = $PointLight2D2
 @onready var click_sound = $FlashlightClick
 
+const RESTRICTED_SCENES = [
+	"menu_interface.tscn",
+	"options_interface.tscn",
+	"prologue_interface.tscn",
+	"maintenancedialogue_interface.tscn",
+]
+
 func _ready():
 	# Tune light properties
 	light.energy = 2.0
@@ -16,9 +23,21 @@ func _ready():
 	light.visible = has_flashlight
 	dot.visible = has_flashlight
 
+func _is_in_game_scene() -> bool:
+	var current_scene = get_tree().current_scene
+	if not current_scene:
+		return false
+	
+	var current_scene_file = current_scene.scene_file_path.get_file()
+	return not (current_scene_file in RESTRICTED_SCENES)
+
 func _input(event):
 	# Check if the player has the flashlight and the light node is valid
 	if not InventoryManager.is_item_picked_up("Flashlight") or not is_instance_valid(light):
+		return
+
+	# Check if the current scene is valid
+	if not _is_in_game_scene():
 		return
 	
 	# Check for Right Mouse Button click (MOUSE_BUTTON_RIGHT) or a custom Action

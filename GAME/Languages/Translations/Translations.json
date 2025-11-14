@@ -7,7 +7,11 @@
 	"settings_music": "Music",
 	"settings_video": "Video",
 	"settings_language": "Language",
-	"setting_return": "Return"
+	"setting_return": "Return",
+	"ingame_resume": "Resume",
+	"ingame_settings": "Settings",
+	"ingame_quit": "Quit",
+	"ingame_title": "Pause"
   },
   "Francais": {
 	"menu_game": "Nouveau partie",
@@ -17,15 +21,23 @@
 	"settings_music": "Musique",
 	"settings_video": "Video",
 	"settings_language": "Langue",
-	"setting_return": "Retour"
+	"setting_return": "Retour",
+	"ingame_resume": "Resume",
+	"ingame_settings": "Options",
+	"ingame_quit": "Quitter",
+	"ingame_title": "Pause"
   },
   "Espanol": {
 	"menu_game": "Nueva partida",
-	"menu_options": "Opciones",
+	"menu_options": "Ajustes",
 	"menu_quit": "Salir",
 	"settings_brightness": "Brillo",
 	"settings_music": "Musica",
 	"settings_video": "Video",
-	"settings_language": "Idioma"
+	"settings_language": "Idioma",
+	"ingame_resume": "Resumir",
+	"ingame_settings": "Ajustes",
+	"ingame_quit": "Salir",
+	"ingame_title": "Pausa"
   }
 }

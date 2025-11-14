@@ -24,6 +24,8 @@ Flashlight="*res://ScenarioScript/ItemsSS/Flashlight/Flashlight.tscn"
 BrightnessOverlay="*res://ScenarioScript/BrightSS/BrightnessOverlay.tscn"
 LanguageManager="*res://Languages/Translations/LanguageManager.gd"
 GameState="*res://ScenarioScript/GameManagerSS/GameState/GameState.gd"
+PauseUi="*res://ScenarioScript/PauseMenuSS/PauseUI.tscn"
+PausePlayer="*res://ScenarioScript/PausePlayerSS/PausePlayer.tscn"
 
 [display]
 

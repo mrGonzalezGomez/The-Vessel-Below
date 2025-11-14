@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddrwevp0scvlt"]
+
+[ext_resource type="AudioStream" uid="uid://crnwwnm0pxasc" path="res://Assets/Music/Songs/PauseMenu/PauseMenu.mp3" id="1_wutcj"]
+[ext_resource type="Script" uid="uid://ls7u626rhjf7" path="res://ScenarioScript/PausePlayerSS/pause_player.gd" id="2_vkxri"]
+
+[node name="PausePlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wutcj")
+bus = &"Pause Music"
+script = ExtResource("2_vkxri")

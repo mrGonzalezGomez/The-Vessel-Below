@@ -1,5 +1,7 @@
 extends Node
 
+signal language_changed
+
 var translations = {}
 var current_lang = "English"
 
@@ -13,6 +15,7 @@ func _ready():
 func set_language(lang: String):
 	if lang in translations:
 		current_lang = lang
+		emit_signal("language_changed")
 
 func t(key: String) -> String:
 	# Return translation for current language

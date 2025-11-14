@@ -11,6 +11,25 @@ var current_resolution_index := 0
 var languages = ["English", "Francais", "Espanol"]
 var lang_index := 0
 
+# Helper function to apply volume to ALL relevant Audio Buses and update the UI label
+func _apply_music_volume(value: float):
+	# 1. Control the Menu Music bus (for Main Menu music)
+	var menu_music_bus_index = AudioServer.get_bus_index("Menu Music")
+	if menu_music_bus_index != -1:
+		AudioServer.set_bus_volume_db(menu_music_bus_index, value)
+	else:
+		print("Warning: Audio Bus 'Menu Music' not found!")
+	
+	# 2. Control the Pause Music bus
+	var pause_music_bus_index = AudioServer.get_bus_index("Pause Music")
+	if pause_music_bus_index != -1:
+		AudioServer.set_bus_volume_db(pause_music_bus_index, value)
+	else:
+		# If this bus is missing, the music will still be audible at 0%
+		print("Warning: Audio Bus 'Pause Music' not found! Pause music will not be controlled.")
+	
+	$MusicPercent.text = str(round((value + 40) * 2.5)) + " %"
+
 func _ready():
 	_update_texts()
 
@@ -22,6 +41,12 @@ func _ready():
 
 	var res = resolutions[current_resolution_index]
 	$ResolutionText.text = str(res.x) + " x " + str(res.y)
+	
+	# Initial volume check: Read volume from a bus and apply it (to update the label and buses)
+	var music_bus_index = AudioServer.get_bus_index("Menu Music")
+	if music_bus_index != -1:
+		$MusicSlider.value = AudioServer.get_bus_volume_db(music_bus_index)
+	_apply_music_volume($MusicSlider.value)
 	
 	# Show current language on startup
 	$LanguageChoice.text = languages[lang_index]
@@ -39,31 +64,20 @@ func _update_texts():
 func _on_brightness_button_pressed():
 	$ClickSound.play()
 
-	# Toggle between 0 and -40
 	if $BrightSlider.value == 0:
 		$BrightSlider.value = -40
 	else:
 		$BrightSlider.value = 0
 
-	# Apply the brightness
 	BrightnessOverlay.set_brightness($BrightSlider.value)
 
 func _on_music_button_pressed():
 	$ClickSound.play()
 	
-	var music_bus_index = AudioServer.get_bus_index("Menu Music")
-
-	# If slider is already at max, set it to min, otherwise set it to max
 	if $MusicSlider.value >= 0:
-		$MusicSlider.value = -40   # silence
+		$MusicSlider.value = -40
 	else:
-		$MusicSlider.value = 0     # full volume
-
-	# Apply the slider's value to the audio bus
-	AudioServer.set_bus_volume_db(music_bus_index, $MusicSlider.value)
-
-	# Update percentage label
-	$MusicPercent.text = str(round(($MusicSlider.value + 40) * 2.5)) + " %"
+		$MusicSlider.value = 0
 
 func _on_video_button_pressed():
 	$ClickSound.play()
@@ -88,10 +102,7 @@ func _on_bright_slider_value_changed(value):
 	$BrightnessPercent.text = str(round((value + 40) * 2.5)) + " %"
 
 func _on_music_slider_value_changed(value):
-	var music_bus_index = AudioServer.get_bus_index("Menu Music")
-	AudioServer.set_bus_volume_db(music_bus_index, value)
-	
-	$MusicPercent.text = str(round((value + 40) * 2.5)) + " %"
+	_apply_music_volume(value)
 
 func _on_language_button_pressed():
 	$ClickSound.play()

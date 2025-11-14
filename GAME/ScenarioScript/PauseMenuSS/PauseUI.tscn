@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk4px1m7iqcrm"]
+
+[ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="1_7tpou"]
+[ext_resource type="Script" uid="uid://gnkcqid6fobt" path="res://ScenarioScript/PauseMenuSS/Pause_UI.gd" id="1_tccr6"]
+[ext_resource type="AudioStream" uid="uid://c5euakdvxgsrm" path="res://Assets/Music/Buttons/ButtonPress.mp3" id="3_abxsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tpou"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tccr6"]
+bg_color = Color(0.29411766, 0, 0, 0.78431374)
+
+[node name="PauseUi" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tccr6")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1172.0
+offset_bottom = 670.0
+color = Color(0.07683582, 0.07683582, 0.0768358, 0.5882353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 35.0
+offset_right = 1150.0
+offset_bottom = 104.0
+
+[node name="PauseTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_7tpou")
+theme_override_font_sizes/font_size = 70
+text = "PAUSE"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 408.0
+offset_top = 205.0
+offset_right = 747.0
+offset_bottom = 461.0
+theme_override_constants/separation = 30
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7tpou")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_7tpou")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tccr6")
+text = "Resume"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7tpou")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_7tpou")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tccr6")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_7tpou")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_7tpou")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tccr6")
+text = "Quit"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_abxsx")
+volume_db = -20.0
+
+[connection signal="pressed" from="VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
