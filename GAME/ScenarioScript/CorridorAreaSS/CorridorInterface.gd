@@ -21,6 +21,15 @@ var normal_light_energy := 0.0
 var normal_dot_energy := 0.0
 
 func _ready():
+	ArrowManager.navigation_arrows.clear()
+	ArrowManager.interaction_arrows.clear()
+	# Register arrows in the global manager
+	ArrowManager.register_arrow(enter1_sprite, "navigation")
+	ArrowManager.register_arrow(enter2_sprite, "navigation")
+	ArrowManager.register_arrow(enter3_sprite, "navigation")
+	ArrowManager.register_arrow(enter4_sprite, "navigation")
+	ArrowManager.apply_mode(GameState.interface_mode)
+
 	animator.play("fade_in")
 
 	enter1_sprite.modulate = Color(1, 1, 1, 0.2)
@@ -101,22 +110,26 @@ func _on_trans_bedroom_pressed():
 	$DoorOpening.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/BedroomAreaSS/bedroom_interface.tscn")
 
 func _on_trans_maintenance_pressed():
 	$MetalWalking.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/MaintenanceAreaSS/maintenance_interface.tscn")
 
 func _on_trans_motor_stairs_pressed() -> void:
 	$MetalWalking.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/MotorStairsSS/motorstairs_interface.tscn")
 
 func _on_trans_dark_corridor_pressed() -> void:
 	$MetalWalking.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/DarkCorridorSS/darkcorridor_interface.tscn")

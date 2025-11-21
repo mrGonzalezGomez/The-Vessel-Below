@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://2g4sqvirws3x"]
+[gd_scene load_steps=10 format=3 uid="uid://2g4sqvirws3x"]
 
 [ext_resource type="Script" uid="uid://bn6hwvh3oc1io" path="res://ScenarioScript/MaintenanceAreaSS/MaintenanceInterface.gd" id="1_868f7"]
 [ext_resource type="Texture2D" uid="uid://b58ln5x8c0q70" path="res://Assets/Scenarios/FirstFloor/MaintenanceBackground.png" id="1_rwx2l"]
 [ext_resource type="Texture2D" uid="uid://desdyamfkapro" path="res://Assets/Indication/BackArrow.png" id="3_4juym"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_868f7"]
 [ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="5_bi340"]
 
 [sub_resource type="Animation" id="Animation_i8wxg"]
@@ -73,6 +74,12 @@ offset_right = 1163.0
 offset_bottom = 673.0
 texture = ExtResource("1_rwx2l")
 expand_mode = 1
+
+[node name="Enter" type="Sprite2D" parent="."]
+position = Vector2(730.17676, 478.9089)
+rotation = 0.7853982
+scale = Vector2(0.052920546, 0.063655466)
+texture = ExtResource("3_868f7")
 
 [node name="Exit" type="Sprite2D" parent="."]
 position = Vector2(560.5, 591.99994)

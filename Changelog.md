@@ -33,7 +33,7 @@ Foundational work establishing the core systems, assets and initial scenes.
 ## Alpha Development
 
 ### Overview
-Early alpha focused on player tools, accessibility settings and polish; followed by iterative refinements and new content additions.
+Early alpha focused on gameplay, accessibility settings and polish; followed by iterative refinements and new content additions.
 
 ### Week 1
 - New features
@@ -48,7 +48,7 @@ Early alpha focused on player tools, accessibility settings and polish; followed
 - New Features
 	- Implemented: Maintenance Bay (new room at the end of the main corridor)
 	- Upgraded: Flashlight flicker effect when allies or enemies are present
-	- NPC added: Holloway —> Provides hints and backstory (located in Maintenance Bay)
+	- NPC added: Holloway -> Provides hints and backstory (located in Maintenance Bay)
 
 - Refinements and Enhancements
 	- Improved time lapse timing between Menu and Prologue for pacing
@@ -69,3 +69,14 @@ Early alpha focused on player tools, accessibility settings and polish; followed
 	- Fixed cursor removal bug when finishing the Maintenance Bay dialogue
 	- Fixed flashlight flicker effect bug when entering new rooms
 	- Fixed cursor and lighting display when opening inventory
+
+### Week 4
+- New Features
+	- Added new core mechanic for the flashlight -> Turn on and off with right click
+	- Added a new in-game pause menu -> Resume, Options (TODO), Quit
+	- Added a new accessibility option in the settings page -> Immersive Option (Hides/shows all UI elements)
+	- Added a new item -> The Radio (Located in the Dark Corridor) with unique audio and visual assets
+
+- Refinements and Enhancements
+	- Updated sound design for multiple elements -> Inventory, notes and flashlight
+	- Updated bus sound design for the music in the menu and in-game

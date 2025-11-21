@@ -10,6 +10,8 @@ var resolutions = [
 var current_resolution_index := 0
 var languages = ["English", "Francais", "Espanol"]
 var lang_index := 0
+var arrow_modes = ["Immersive", "Guided", "Complete"]
+var arrow_mode_index := 0
 
 # Helper function to apply volume to ALL relevant Audio Buses and update the UI label
 func _apply_music_volume(value: float):
@@ -50,6 +52,9 @@ func _ready():
 	
 	# Show current language on startup
 	$LanguageChoice.text = languages[lang_index]
+	
+	# Show current accessibility on startup
+	$ArrowChoice.text = arrow_modes[arrow_mode_index]
 
 func _update_texts():
 	$VBoxContainer/BrightnessButton.text = LanguageManager.t("settings_brightness")
@@ -109,3 +114,12 @@ func _on_language_button_pressed():
 	lang_index = (lang_index + 1) % languages.size()
 	LanguageManager.set_language(languages[lang_index])
 	_update_texts()
+
+func _on_accessibility_button_pressed() -> void:
+	$ClickSound.play()
+	arrow_mode_index = (arrow_mode_index + 1) % arrow_modes.size()
+	$ArrowChoice.text = arrow_modes[arrow_mode_index]
+
+	var mode = arrow_modes[arrow_mode_index].to_lower()
+	GameState.interface_mode = mode
+	ArrowManager.apply_mode(mode)

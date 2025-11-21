@@ -12,6 +12,12 @@ var note_texts = {
 }
 
 func _ready():
+	ArrowManager.navigation_arrows.clear()
+	ArrowManager.interaction_arrows.clear()
+	# Register arrows in the global manager
+	ArrowManager.register_arrow(exit_sprite, "navigation")
+	ArrowManager.apply_mode(GameState.interface_mode)
+
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	animator.play("fade_in")
 
@@ -39,6 +45,7 @@ func _on_trans_corridor_pressed():
 	$DoorClosing.play()
 	animator.play("transition")
 	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/CorridorAreaSS/corridor_interface.tscn")
 
 func _on_note_input_event(_viewport, event, _shape_idx):

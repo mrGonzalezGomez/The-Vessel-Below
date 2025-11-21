@@ -1,10 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://baa3b52h1gbic"]
+[gd_scene load_steps=18 format=3 uid="uid://baa3b52h1gbic"]
 
-[ext_resource type="Script" path="res://ScenarioScript/OptionSS/OptionsInterface.gd" id="1_cd81v"]
+[ext_resource type="Script" uid="uid://cslws3lwdlpms" path="res://ScenarioScript/OptionSS/OptionsInterface.gd" id="1_cd81v"]
 [ext_resource type="Texture2D" uid="uid://cb0cmffo2lvki" path="res://Assets/Scenarios/Menu/MenuBackground.png" id="2_sxujj"]
 [ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="3_skal4"]
 [ext_resource type="AudioStream" uid="uid://c5euakdvxgsrm" path="res://Assets/Music/Buttons/ButtonPress.mp3" id="4_nl8t1"]
 [ext_resource type="FontFile" uid="uid://bw2qtiom7ab4x" path="res://Assets/Font/Wide.TTF" id="5_p8elr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f01v6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsinf"]
+bg_color = Color(0.29411766, 0, 0, 0.78431374)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnoss"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -64,6 +70,16 @@ offset_bottom = -70.0
 grow_vertical = 0
 theme_override_constants/separation = 30
 alignment = 1
+
+[node name="AccessibilityButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45490196, 0.45490196, 0.45490196, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_skal4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_f01v6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wsinf")
+text = "Accessibility"
 
 [node name="BrightnessButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -151,6 +167,17 @@ max_value = 0.0
 stream = ExtResource("4_nl8t1")
 volume_db = -20.0
 
+[node name="ArrowChoice" type="Label" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 190.0
+offset_right = 475.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("5_p8elr")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BrightnessPercent" type="Label" parent="."]
 layout_mode = 0
 offset_left = 350.0
@@ -163,7 +190,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MusicPercent" type="Label" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 350.0
 offset_top = 337.0
 offset_right = 435.0
@@ -200,6 +227,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="VBoxContainer/AccessibilityButton" to="." method="_on_accessibility_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BrightnessButton" to="." method="_on_brightness_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VideoButton" to="." method="_on_video_button_pressed"]

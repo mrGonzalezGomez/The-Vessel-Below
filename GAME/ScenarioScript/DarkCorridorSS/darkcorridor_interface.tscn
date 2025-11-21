@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwuy2o8xh0a0j"]
+[gd_scene load_steps=12 format=3 uid="uid://cwuy2o8xh0a0j"]
 
 [ext_resource type="Script" uid="uid://cnuh0lbcvynr3" path="res://ScenarioScript/DarkCorridorSS/DarkCorridorInterface.gd" id="1_04poe"]
 [ext_resource type="Texture2D" uid="uid://cw0lg2pq7d7re" path="res://Assets/Scenarios/FirstFloor/DarkCorridorBackground.png" id="1_o5jj8"]
 [ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_hgftr"]
 [ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="4_04poe"]
 [ext_resource type="AudioStream" uid="uid://1lxrhurso5cb" path="res://Assets/Music/Ambience/LightRoom/Sparks.mp3" id="5_i8ijl"]
+[ext_resource type="Texture2D" uid="uid://cnrn6p8pg8ieo" path="res://Assets/Items/Radio.png" id="6_i8ijl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04poe"]
+size = Vector2(71, 66)
 
 [sub_resource type="Animation" id="Animation_i8wxg"]
 length = 0.001
@@ -92,6 +96,18 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
 
+[node name="Radio" type="Area2D" parent="."]
+position = Vector2(701, 493)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_04poe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Radio"]
+position = Vector2(0.9999883, 1.0000057)
+scale = Vector2(0.05078125, 0.0449219)
+texture = ExtResource("6_i8ijl")
+
 [node name="Fade" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1155.0
@@ -113,3 +129,4 @@ stream = ExtResource("5_i8ijl")
 volume_db = 15.0
 
 [connection signal="pressed" from="EnterCorridor/TransCorridor" to="." method="_on_trans_corridor_pressed"]
+[connection signal="input_event" from="Radio" to="." method="_on_radio_input_event"]

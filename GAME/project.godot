@@ -26,6 +26,8 @@ LanguageManager="*res://Languages/Translations/LanguageManager.gd"
 GameState="*res://ScenarioScript/GameManagerSS/GameState/GameState.gd"
 PauseUi="*res://ScenarioScript/PauseMenuSS/PauseUI.tscn"
 PausePlayer="*res://ScenarioScript/PausePlayerSS/PausePlayer.tscn"
+ArrowManager="*res://ScenarioScript/AccessibilitySS/ArrowManager.gd"
+RadioManager="*res://ScenarioScript/ItemsSS/Radio/RadioManager.gd"
 
 [display]
 
