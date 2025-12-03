@@ -5,6 +5,7 @@ extends Control
 
 @onready var fade = $Fade
 @onready var animator = $AnimationFade
+@onready var audio_player = $DialogueAudioPlayer
 
 var background_images = [
 	preload("res://Assets/Scenarios/Prologue/PrologueScene1.png"),
@@ -33,7 +34,6 @@ func _process(_delta):
 		else:
 			$DialogueBox/TextBox.visible_characters = len($DialogueBox/TextBox.text)
 
-# Load the dialogue for the current language
 func getDialog() -> Array:
 	var f = FileAccess.open(dialogPath, FileAccess.READ)
 	assert(f, "Could not open dialog file!")
@@ -42,17 +42,15 @@ func getDialog() -> Array:
 	json_object.parse(json)
 	var data = json_object.data
 
-	# The JSON file contains multiple language keys
 	if typeof(data) == TYPE_DICTIONARY:
 		var lang = LanguageManager.current_lang
 		if data.has(lang):
 			return data[lang]
+		elif data.has("English"):
+			push_warning("Language missing, using English fallback.")
+			return data["English"]
 		else:
-			push_warning("Language '%s' not found in dialogue file, using English fallback." % lang)
-			if data.has("English"):
-				return data["English"]
-			else:
-				return []
+			return []
 	elif typeof(data) == TYPE_ARRAY:
 		return data
 	else:
@@ -66,6 +64,9 @@ func nextPhrase():
 	finished = false
 	var entry = dialog[phraseNum]
 
+	### AUDIO: Stop any previous clip ###
+	audio_player.stop()  ### ADDED FOR AUDIO ###
+
 	$ChoiceBox.visible = false
 	for child in $ChoiceBox.get_children():
 		child.queue_free()
@@ -74,6 +75,7 @@ func nextPhrase():
 	$DialogueBox/TextBox.bbcode_text = entry["Text"]
 	$DialogueBox/TextBox.visible_characters = 0
 
+	# Background logic unchanged
 	if entry.has("Background"):
 		var index = entry["Background"]
 		if index >= 0 and index < background_images.size():
@@ -95,12 +97,24 @@ func nextPhrase():
 			$ExplosionSound.play()
 			$AnimationFade.play("blackout")
 
+	### AUDIO: Play voice for this line ###
+	if entry.has("Audio"):                                   ### ADDED FOR AUDIO ###
+		var audio_path = entry["Audio"]
+		if ResourceLoader.exists(audio_path):
+			var stream = load(audio_path)
+			if stream:
+				audio_player.stream = stream
+				audio_player.play()                           ### ADDED FOR AUDIO ###
+		else:
+			push_warning("Audio file not found: " + audio_path) ### ADDED FOR AUDIO ###
 
+	### TEXT TYPEWRITER ###
 	while $DialogueBox/TextBox.visible_characters < len($DialogueBox/TextBox.text):
 		$DialogueBox/TextBox.visible_characters += 1
 		$Timer.start()
 		await $Timer.timeout
 
+	### CHOICES ###
 	if entry.has("Choices"):
 		finished = false
 

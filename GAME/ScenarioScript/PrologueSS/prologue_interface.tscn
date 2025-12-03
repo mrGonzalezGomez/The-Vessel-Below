@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cgjbgp5lymp7c"]
 
 [ext_resource type="Texture2D" uid="uid://d0lkajw0dk46y" path="res://Assets/Scenarios/Prologue/PrologueScene1.png" id="1_iww33"]
-[ext_resource type="Script" path="res://ScenarioScript/PrologueSS/prologue_interface.gd" id="1_rdoyc"]
+[ext_resource type="Script" uid="uid://cjq42h86x6cre" path="res://ScenarioScript/PrologueSS/prologue_interface.gd" id="1_rdoyc"]
 [ext_resource type="Texture2D" uid="uid://cn4iiqo6yi264" path="res://Assets/Dialogue/TextBox/DialogueBox.png" id="2_36inm"]
 [ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="4_ym6rv"]
 [ext_resource type="AudioStream" uid="uid://13sqft6jkcto" path="res://Assets/Music/Ambience/Prologue/Waves.mp3" id="5_v3qfn"]
@@ -57,9 +57,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wgqog"]
 _data = {
-"RESET": SubResource("Animation_koqoa"),
-"blackout": SubResource("Animation_ll88m"),
-"fade_in": SubResource("Animation_b40wc")
+&"RESET": SubResource("Animation_koqoa"),
+&"blackout": SubResource("Animation_ll88m"),
+&"fade_in": SubResource("Animation_b40wc")
 }
 
 [node name="PrologueInterface" type="Control"]
@@ -124,7 +124,7 @@ one_shot = true
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wgqog")
+&"": SubResource("AnimationLibrary_wgqog")
 }
 
 [node name="WaveSound" type="AudioStreamPlayer" parent="."]
@@ -140,3 +140,6 @@ autoplay = true
 [node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_u7p6b")
 volume_db = -20.0
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0

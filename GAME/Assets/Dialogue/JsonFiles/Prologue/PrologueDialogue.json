@@ -4,6 +4,7 @@
 	  "Name": "Bartlett",
 	  "Text": "Redwater's running smooth, Lieutenant. Almost feels... too smooth.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_1/PreQuestion/BarlettSection1_Question.mp3",
 	  "Choices": [
 		{ "Text": "Superstition doesn't suit you, Commander.", "Next": 1 },
 		{ "Text": "Still no word from Ford Island?", "Next": 2 },
@@ -15,30 +16,35 @@
 	  "Name": "Bartlett",
 	  "Text": "That's not superstition, it's instinct. After Pearl, I trust my gut more than any radar.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer1.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Radio's fuzzy. They're either too busy... or something's blocking it.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer2.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "There's no such thing as luck out here. Only decisions and consequences.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer3.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Quiet officers don't live long. Speak your thoughts, Hale.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer4.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "You ever wonder if we're alone out here? I mean truly alone?",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_2/PreQuestion/BarlettSection2_Question.mp3",
 	  "Choices": [
 		{ "Text": "You mean enemy subs?", "Next": 6 },
 		{ "Text": "You hear something, sir?", "Next": 7 },
@@ -49,24 +55,28 @@
 	  "Name": "Bartlett",
 	  "Text": "I'd prefer enemy subs. At least they're predictable.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer1.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "No. That's what's troubling me.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer2.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "No. I think... we're being listened to.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer3.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Sir, there's something weird in the signal. Repeating pulses... not Morse, not Japanese.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_3/PreQuestion/PorterSection3_Question.mp3",
 	  "Choices": [
 		{ "Text": "Could be distortion from the storm.", "Next": 10 },
 		{ "Text": "Is it English?", "Next": 11 },
@@ -77,24 +87,28 @@
 	  "Name": "Porter",
 	  "Text": "Could be. But it's rhythmic. Feels... deliberate.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer1.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "No language I know, sir. Just... noise that wants to be words.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer2.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "I've been trying. It's not a frequency issue—it's embedded beneath the broadcast.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer3.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Sir... it's like it's waiting for someone to respond.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_4/PreQuestion/PorterSection4_Question.mp3",
 	  "Choices": [
 		{ "Text": "Then don't answer it.", "Next": 14 },
 		{ "Text": "Keep monitoring. Don't engage.", "Next": 15 },
@@ -105,36 +119,42 @@
 	  "Name": "Porter",
 	  "Text": "Yes, sir. But... what if someone already did?",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer1.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Aye. I'll keep it off open channel.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer2.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Understood, sir. Marking now.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer3.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Just as you finish speaking with Porter, alarms blare. A rumble shakes the deck. The ship lurches violently.*",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Narrator/Section_5/NarratorSection5.mp3",
 	  "Next": 18
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Brace for impact! Unknown contact—port side—full lock—",
 	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Bartlett/Section_6/BarlettSection6.mp3",
 	  "Next": 19
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Your vision blurs. Porter screams. Something slams the hull. Darkness.*",
-	  "Background": 2
+	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/EN/Prologue/Narrator/Section_7/NarratorSection7.mp3"
 	}
   ],
 
@@ -143,6 +163,7 @@
 	  "Name": "Bartlett",
 	  "Text": "Le Redwater tourne bien, Lieutenant. Presque trop bien.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_1/PreQuestion/BarlettSection1_Question.mp3",
 	  "Choices": [
 		{ "Text": "La superstition ne te va pas, Commandant.", "Next": 1 },
 		{ "Text": "Toujours aucune nouvelle de Ford Island ?", "Next": 2 },
@@ -154,30 +175,35 @@
 	  "Name": "Bartlett",
 	  "Text": "Ce n'est pas de la superstition, c'est de l'instinct. Apres Pearl, je fais plus confiance a mon instinct qu'a n'importe quel radar.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer1.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "La radio est brouillee. Soit ils sont occupes... soit quelque chose la bloque.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer2.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Il n'y a pas de chance ici. Seulement des decisions et des consequences.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer3.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Les officiers silencieux ne vivent pas longtemps. Dis ce que tu penses, Hale.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer4.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
-	  "Text": "Tu Tu penses qu'on nous obsert'es deja demande si nous etions seuls ici dehors ? Vraiment seuls ?",
+	  "Text": "Tu t'es deja demande si nous etions seuls ici dehors ? Vraiment seuls ?",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_2/PreQuestion/BarlettSection2_Question.mp3",
 	  "Choices": [
 		{ "Text": "Tu veux dire des sous-marins ennemis ?", "Next": 6 },
 		{ "Text": "Tu entends quelque chose, mon Commandant ?", "Next": 7 },
@@ -188,24 +214,28 @@
 	  "Name": "Bartlett",
 	  "Text": "Je prefererais des sous-marins ennemis. Au moins, eux sont previsibles.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer1.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Non. C'est ca qui m'inquiete.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer2.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Non. Je pense... qu'on nous ecoute.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer3.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Mon Commandant, il y a quelque chose d'etrange dans le signal. Des impulsions qui se repetent... ni Morse, ni japonais.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_3/PreQuestion/PorterSection3_Question.mp3",
 	  "Choices": [
 		{ "Text": "Peut-etre une distorsion causee par la tempete.", "Next": 10 },
 		{ "Text": "C'est de l'anglais ?", "Next": 11 },
@@ -216,24 +246,28 @@
 	  "Name": "Porter",
 	  "Text": "Peut-etre. Mais c'est rythmique. Ca semble... volontaire.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer1.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Aucune langue que je connaisse, Commandant. Juste... du bruit qui veut etre des mots.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer2.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "J'essaie depuis tout a l'heure. Ce n'est pas un probleme de frequence — c'est integre sous la diffusion.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer3.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Commandant... on dirait qu'il attend que quelqu'un reponde.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_4/PreQuestion/PorterSection4_Question.mp3",
 	  "Choices": [
 		{ "Text": "Alors ne reponds pas.", "Next": 14 },
 		{ "Text": "Continue de surveiller. N'engage pas.", "Next": 15 },
@@ -244,36 +278,42 @@
 	  "Name": "Porter",
 	  "Text": "Oui, Commandant. Mais... et si quelqu'un l'avait deja fait ?",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer1.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
-	  "Text": "Bien recu. Je le garde hors canal ouvert.",
+	  "Text": "Bien recu. Je le garde hors du canal ouvert.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer2.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Compris, Commandant. Je note.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer3.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Alors que vous terminez de parler avec Porter, les alarmes retentissent. Un grondement secoue le pont. Le navire chavire violemment.*",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Narrator/Section_5/NarratorSection5.mp3",
 	  "Next": 18
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Accrochez-vous ! Contact inconnu — babord — verrouillage complet —",
 	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Bartlett/Section_6/BarlettSection6.mp3",
 	  "Next": 19
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Votre vision se trouble. Porter crie. Quelque chose percute la coque. Obscurite.*",
-	  "Background": 2
+	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/FR/Prologue/Narrator/Section_7/NarratorSection7.mp3"
 	}
   ],
 
@@ -282,6 +322,7 @@
 	  "Name": "Bartlett",
 	  "Text": "El Redwater va suave, Teniente. Casi demasiado suave.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_1/PreQuestion/BarlettSection1_Question.mp3",
 	  "Choices": [
 		{ "Text": "La supersticion no te queda, Comandante.", "Next": 1 },
 		{ "Text": "Aun sin noticias desde Ford Island?", "Next": 2 },
@@ -293,30 +334,35 @@
 	  "Name": "Bartlett",
 	  "Text": "No es supersticion, es instinto. Despues de Pearl, confio mas en mi instinto que en cualquier radar.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer1.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "La radio esta distorsionada. O estan ocupados... o algo la bloquea.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer2.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "No hay suerte aqui afuera. Solo decisiones y consecuencias.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer3.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Los oficiales callados no viven mucho. Dime lo que piensas, Hale.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_1/AfterQuestion/BarlettSection1_Answer4.mp3",
 	  "Next": 5
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Te has preguntado si estamos solos aqui afuera? Realmente solos?",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_2/PreQuestion/BarlettSection2_Question.mp3",
 	  "Choices": [
 		{ "Text": "Te refieres a submarinos enemigos?", "Next": 6 },
 		{ "Text": "Escucho algo, senor?", "Next": 7 },
@@ -327,24 +373,28 @@
 	  "Name": "Bartlett",
 	  "Text": "Prefiero submarinos enemigos. Al menos son predecibles.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer1.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "No. Eso es lo que me preocupa.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer2.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "No. Creo... que nos estan escuchando.",
 	  "Background": 0,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_2/AfterQuestion/BarlettSection2_Answer3.mp3",
 	  "Next": 9
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Senor, hay algo raro en la senal. Pulsos repetidos... no Morse, no japones.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_3/PreQuestion/PorterSection3_Question.mp3",
 	  "Choices": [
 		{ "Text": "Podria ser distorsion de la tormenta.", "Next": 10 },
 		{ "Text": "Es ingles?", "Next": 11 },
@@ -355,24 +405,28 @@
 	  "Name": "Porter",
 	  "Text": "Podria ser. Pero es ritmico. Parece... deliberado.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer1.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Ningun idioma que conozca, senor. Solo... ruido que quiere ser palabras.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer2.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "He estado intentando. No es un problema de frecuencia — esta incrustado bajo la transmision.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_3/AfterQuestion/PorterSection3_Answer3.mp3",
 	  "Next": 13
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Senor... es como si esperara que alguien respondiera.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_4/PreQuestion/PorterSection4_Question.mp3",
 	  "Choices": [
 		{ "Text": "Entonces no respondas.", "Next": 14 },
 		{ "Text": "Sigue monitoreando. No respondas.", "Next": 15 },
@@ -383,36 +437,42 @@
 	  "Name": "Porter",
 	  "Text": "Si, senor. Pero... y si alguien ya lo hizo?",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer1.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Entendido. Lo mantendre fuera del canal abierto.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer2.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Porter",
 	  "Text": "Comprendido, senor. Marcando ahora.",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Porter/Section_4/AfterQuestion/PorterSection4_Answer3.mp3",
 	  "Next": 17
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Justo cuando terminas de hablar con Porter, suenan las alarmas. Un estruendo sacude la cubierta. El barco se sacude violentamente.*",
 	  "Background": 1,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Narrator/Section_5/NarratorSection5.mp3",
 	  "Next": 18
 	},
 	{
 	  "Name": "Bartlett",
 	  "Text": "Preparense para el impacto! Contacto desconocido — babor — cierre total —",
 	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Bartlett/Section_6/BarlettSection6.mp3",
 	  "Next": 19
 	},
 	{
 	  "Name": "Narrator",
 	  "Text": "*Tu vision se nubla. Porter grita. Algo golpea el casco. Oscuridad.*",
-	  "Background": 2
+	  "Background": 2,
+	  "Audio": "res://Assets/Dialogue/VoiceActing/ES/Prologue/Narrator/Section_7/NarratorSection7.mp3"
 	}
   ]
 }
