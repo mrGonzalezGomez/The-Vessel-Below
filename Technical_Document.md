@@ -17,20 +17,6 @@
 
 ---
 
-## Key Scenes
-
-- `ScenarioScript/MenuSS/menu_interface.tscn` — Main menu interface
-- `ScenarioScript/OptionSS/options_interface.tscn` — Options (Brightness, music, video, languages)
-- `ScenarioScript/PrologueSS/prologue_interface.tscn` — Prologue dialogue scene
-- `ScenarioScript/BedroomAreaSS/bedroom_interface.tscn` — Bedroom area
-- `ScenarioScript/CorridorAreaSS/corridor_interface.tscn` — Corridor transition
-- `ScenarioScript/InventorySS/InventoryUI.tscn`, `ItemSlot.tscn` — Inventory system
-- `ScenarioScript/MenuPlayerSS/menu_player.tscn` — Sound bus & menu audio control
-- `ScenarioScript/MaintenanceAreaSS/maintenance_interface.tscn` — New area containing the NPC interaction point.
-- `ScenarioScript/MaintenanceDialogueSS/maintenancedialogue_interface.tscn` — New dedicated NPC dialogue scene.
-
----
-
 ## Core Nodes
 
 - **Control** — All interfaces (Menus, inventory, prologue)
@@ -45,6 +31,7 @@
 ## Core Systems
 
 ### Options System
+- Inmersive settings (Remove or add indications as needed for player guidance)
 - Brightness slider with overlay adjustment
 - Music slider linked to `Game Music` and `Menu Music` bus
 - Video resolution selector (1280x720, 1600x900, 1920x1,080, 2560x1440)
@@ -54,6 +41,7 @@
 - Loads `Translations.json` from `Languages/Translations/`
 - Updates all UI text dynamically based on selected language
 - Integrated into menus, prologue dialogues and item descriptions
+- Updated voice acting lines based on selected language
 
 ### Dialogue System
 - Dialogue stored as structured JSON per scene

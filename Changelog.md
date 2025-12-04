@@ -80,3 +80,12 @@ Early alpha focused on gameplay, accessibility settings and polish; followed by 
 - Refinements and Enhancements
 	- Updated sound design for multiple elements -> Inventory, notes and flashlight
 	- Updated bus sound design for the music in the menu and in-game
+
+### Week 5
+
+- New Features
+	- Added new voice acting for the entire Prologue section (Including all languages)
+	- Added 1 new room -> Engine Room with new sound effects, visual assets and interactable elements
+
+- Refinements and Enhancements
+	- Updated the Json file containing all the prologue script to include the new voice acting lines

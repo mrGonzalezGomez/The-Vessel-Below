@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0h437ij5bqui"]
+[gd_scene load_steps=11 format=3 uid="uid://c0h437ij5bqui"]
 
 [ext_resource type="Script" uid="uid://duudmgfipq2wo" path="res://ScenarioScript/MotorStairsSS/MotorStairsInterface.gd" id="1_iawbl"]
 [ext_resource type="Texture2D" uid="uid://bj5l46h506bwk" path="res://Assets/Scenarios/FirstFloor/MotorStairs.png" id="2_imk1x"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_imk1x"]
 [ext_resource type="Texture2D" uid="uid://desdyamfkapro" path="res://Assets/Indication/BackArrow.png" id="3_j556g"]
 [ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="4_iawbl"]
+[ext_resource type="AudioStream" uid="uid://78y16c5v7gj3" path="res://Assets/Music/Floor/Stairs/MetalStairs.mp3" id="6_j556g"]
 
 [sub_resource type="Animation" id="Animation_i8wxg"]
 length = 0.001
@@ -67,12 +69,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iawbl")
 
-[node name="MaintenanceBackground" type="TextureRect" parent="."]
+[node name="MotorStairsBackground" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1163.0
 offset_bottom = 673.0
 texture = ExtResource("2_imk1x")
 expand_mode = 1
+
+[node name="Enter" type="Sprite2D" parent="."]
+position = Vector2(578.125, 348)
+scale = Vector2(0.055338524, 0.069196455)
+texture = ExtResource("3_imk1x")
 
 [node name="Exit" type="Sprite2D" parent="."]
 position = Vector2(582, 593)
@@ -91,6 +98,18 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 122)
 layout_mode = 2
 
+[node name="EnterMotor" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 240.0
+offset_right = 655.0
+offset_bottom = 375.0
+
+[node name="TransMotor" type="Button" parent="EnterMotor"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 135)
+layout_mode = 2
+
 [node name="Fade" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1155.0
@@ -107,4 +126,8 @@ libraries = {
 stream = ExtResource("4_iawbl")
 volume_db = 15.0
 
+[node name="MetalStairs" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_j556g")
+
 [connection signal="pressed" from="EnterCorridor/TransCorridor" to="." method="_on_trans_corridor_pressed"]
+[connection signal="pressed" from="EnterMotor/TransMotor" to="." method="_on_trans_motor_pressed"]

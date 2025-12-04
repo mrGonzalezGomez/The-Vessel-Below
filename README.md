@@ -14,7 +14,7 @@ This project was born at the beginning of my second year at EPITECH when I disco
 - 🖱️ Point-and-click movement
 - 🎧 Immersive visual and audio atmosphere
 - 📦 Basic inventory system
-- 💬 NPC dialogues
+- 💬 NPC dialogues (With voice acting)
 - 📖 Narrative storyline
 
 ---
@@ -22,7 +22,7 @@ This project was born at the beginning of my second year at EPITECH when I disco
 ## How to Play
 
 - **Movement**: Click with the mouse to move the character.
-- **Interact**: Click on interactive objects or NPCs.
+- **Interact**: Click and hold on interactive objects or NPCs.
 - **Inventory**: Press `I` to open the inventory.
 
 ---
@@ -39,7 +39,7 @@ This project was born at the beginning of my second year at EPITECH when I disco
 ## Credits
 
 Project developed individually by **Noa Gonzalez Gomez**.
-Assets: Original creations + free-to-use resources (Kenney, OpenGameArt…)
+Assets: Original creations + free-to-use resources
 
 ---
 
