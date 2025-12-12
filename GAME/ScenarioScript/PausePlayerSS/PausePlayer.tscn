@@ -6,4 +6,5 @@
 [node name="PausePlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_wutcj")
 bus = &"Pause Music"
+parameters/looping = true
 script = ExtResource("2_vkxri")

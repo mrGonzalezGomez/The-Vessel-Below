@@ -7,4 +7,5 @@
 stream = ExtResource("1_lf5uu")
 autoplay = true
 bus = &"Menu Music"
+parameters/looping = true
 script = ExtResource("2_gntm3")

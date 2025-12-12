@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://cgchfb4xwe0qo"]
+
+[ext_resource type="Script" uid="uid://dcjqjfqxysjhg" path="res://ScenarioScript/BigMotorSS/BigInterface.gd" id="1_7t2fi"]
+[ext_resource type="Texture2D" uid="uid://b8e6kaw032r77" path="res://Assets/Scenarios/GroundFloor/BigMotorRoomBackground.png" id="1_p2hts"]
+[ext_resource type="Texture2D" uid="uid://desdyamfkapro" path="res://Assets/Indication/BackArrow.png" id="2_mdn28"]
+[ext_resource type="Texture2D" uid="uid://bh4yn1pnuv6od" path="res://Assets/Indication/ForwardArrow.png" id="3_hdrom"]
+[ext_resource type="AudioStream" uid="uid://cdyv5o85a4bgk" path="res://Assets/Music/Floor/Walking/WalkingMetal.mp3" id="4_uxhpa"]
+[ext_resource type="AudioStream" uid="uid://wfk1qevnrlve" path="res://Assets/Music/Creature/CreatureBuildUp.mp3" id="5_hl3pm"]
+[ext_resource type="AudioStream" uid="uid://v5e3q7w2fs5k" path="res://Assets/Music/Creature/Scratch.mp3" id="6_7t2fi"]
+[ext_resource type="AudioStream" uid="uid://bf70ft72lulcp" path="res://Assets/Music/Ambience/Item/LightFlicker.mp3" id="8_e5jsa"]
+[ext_resource type="AudioStream" uid="uid://chtw7m2u8w2aq" path="res://Assets/Music/Creature/EatFlesh.mp3" id="8_nor4m"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="BigInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7t2fi")
+
+[node name="BigBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1231.0
+offset_bottom = 712.0
+texture = ExtResource("1_p2hts")
+expand_mode = 1
+
+[node name="DarkOverlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 658.0
+color = Color(0, 0, 0, 0)
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(567.25, 604.5)
+scale = Vector2(0.07248264, 0.083705366)
+texture = ExtResource("2_mdn28")
+
+[node name="Enter" type="Sprite2D" parent="."]
+position = Vector2(617, 448)
+scale = Vector2(0.050347224, 0.049107112)
+texture = ExtResource("3_hdrom")
+
+[node name="EnterCreature" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 349.0
+offset_right = 657.0
+offset_bottom = 463.0
+
+[node name="TransCreature" type="Button" parent="EnterCreature"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 114)
+layout_mode = 2
+
+[node name="EnterMotor" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 562.0
+offset_right = 678.0
+offset_bottom = 646.0
+
+[node name="TransMotor" type="Button" parent="EnterMotor"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8fs0")
+}
+
+[node name="MetalWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uxhpa")
+volume_db = 15.0
+
+[node name="BuildUpMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hl3pm")
+parameters/looping = true
+
+[node name="Scratching" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7t2fi")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="Flesh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nor4m")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="GlitchLight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_e5jsa")
+volume_db = 15.0
+
+[connection signal="pressed" from="EnterCreature/TransCreature" to="." method="_on_trans_creature_pressed"]
+[connection signal="pressed" from="EnterMotor/TransMotor" to="." method="_on_trans_motor_pressed"]

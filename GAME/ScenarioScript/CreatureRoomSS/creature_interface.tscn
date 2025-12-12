@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://xkq81q6iiua6"]
+
+[ext_resource type="Script" uid="uid://c08jpw0m4cj38" path="res://ScenarioScript/CreatureRoomSS/creature_interface.gd" id="1_d1poq"]
+[ext_resource type="Texture2D" uid="uid://xm41caib57yo" path="res://Assets/Scenarios/GroundFloor/CreatureRoom.png" id="1_lti83"]
+[ext_resource type="AudioStream" uid="uid://dasg63gspljtg" path="res://Assets/Music/Creature/Scream.mp3" id="3_hu8hm"]
+
+[sub_resource type="Animation" id="Animation_i8wxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_23miv"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sr8l0"]
+resource_name = "transtion_bedroom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8fs0"]
+_data = {
+&"RESET": SubResource("Animation_i8wxg"),
+&"fade_in": SubResource("Animation_23miv"),
+&"transtion_bedroom": SubResource("Animation_sr8l0")
+}
+
+[node name="CreatureInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1poq")
+
+[node name="CreatureBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1227.0
+offset_bottom = 705.0
+texture = ExtResource("1_lti83")
+expand_mode = 1
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m8fs0")
+}
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 649.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hu8hm")
+volume_db = 20.0

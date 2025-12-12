@@ -3,7 +3,9 @@ extends Control
 @onready var fade = $Fade
 @onready var animator = $AnimationFade
 @onready var trans1_button = $EnterStairs/TransStairs
+@onready var trans2_button = $EnterBig/TransBig
 @onready var exit_sprite = $Exit
+@onready var enter_sprite = $Enter
 @onready var valve = $Valve
 @onready var pull_cord = $PullCord
 @onready var rotation_button = $RotationAction
@@ -31,14 +33,19 @@ func _ready() -> void:
 	ArrowManager.navigation_arrows.clear()
 	ArrowManager.interaction_arrows.clear()
 	ArrowManager.register_arrow(exit_sprite, "navigation")
+	ArrowManager.register_arrow(enter_sprite, "navigation")
 	ArrowManager.apply_mode(GameState.interface_mode)
 	
 	animator.play("fade_in")
 	
 	exit_sprite.modulate = Color(1, 1, 1, 0.4)
+	enter_sprite.modulate = Color(1, 1, 1, 0.4)
 	
 	trans1_button.connect("mouse_entered", Callable(self, "_on_trans_stairs_hover_start"))
 	trans1_button.connect("mouse_exited", Callable(self, "_on_trans_stairs_hover_end"))
+	
+	trans2_button.connect("mouse_entered", Callable(self, "_on_trans_big_hover_start"))
+	trans2_button.connect("mouse_exited", Callable(self, "_on_trans_big_hover_end"))
 
 	rotation_button.connect("button_down", Callable(self, "_on_rotation_start"))
 	rotation_button.connect("button_up", Callable(self, "_on_rotation_stop"))
@@ -114,9 +121,22 @@ func _on_trans_stairs_hover_start():
 func _on_trans_stairs_hover_end():
 	exit_sprite.modulate = Color(1, 1, 1, 0.4)
 
+func _on_trans_big_hover_start():
+	enter_sprite.modulate = Color(1, 1, 1, 0.6)
+
+func _on_trans_big_hover_end():
+	enter_sprite.modulate = Color(1, 1, 1, 0.4)
+
 func _on_trans_stairs_pressed() -> void:
 	$MetalStairs.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished
 	RadioManager.maybe_play_random_sound()
 	get_tree().change_scene_to_file("res://ScenarioScript/MotorStairsSS/motorstairs_interface.tscn")
+
+func _on_trans_big_pressed() -> void:
+	$MetalWalking.play()
+	animator.play("transtion_bedroom")
+	await animator.animation_finished
+	RadioManager.maybe_play_random_sound()
+	get_tree().change_scene_to_file("res://ScenarioScript/BigMotorSS/big_interface.tscn")
