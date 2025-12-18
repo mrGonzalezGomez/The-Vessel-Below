@@ -89,3 +89,14 @@ Early alpha focused on gameplay, accessibility settings and polish; followed by 
 
 - Refinements and Enhancements
 	- Updated the Json file containing all the prologue script to include the new voice acting lines
+
+### Week 6
+
+- New Features
+	- Added a new room -> Big Engine Room with new sound effects, visual assets and interactable elements
+	- Added a new room -> Creature Room with new transitions and visual assets
+	- Added a QTE mechanic -> QTE event when entering the Creature Room
+	- Added difficulty scaling for the QTE mechanic -> Based on previous player choises
+
+- Refinements and Enhancements
+	- Improved immersion and sound design of the big engine room and creature room

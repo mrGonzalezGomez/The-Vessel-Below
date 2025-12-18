@@ -27,3 +27,15 @@ func play_creature_jump_sequence() -> void:
 
 	# STEP 3 — switch to QTE background (final jump)
 	bg.texture = qte_image
+	
+	# STEP 4 — START QTE
+	start_qte()
+
+func start_qte():
+	var qte_scene := preload("res://ScenarioScript/QteSS/qte_interface.tscn")
+	var qte := qte_scene.instantiate()
+
+	# Pass flags
+	qte.flag_valve = GameState.valve_on
+	qte.flag_cord = GameState.cord_on
+	add_child(qte)

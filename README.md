@@ -12,6 +12,7 @@ This project was born at the beginning of my second year at EPITECH when I disco
 
 - 🎮 Main menu with options
 - 🖱️ Point-and-click movement
+- ⏱️ QTE mechanics
 - 🎧 Immersive visual and audio atmosphere
 - 📦 Basic inventory system
 - 💬 NPC dialogues (With voice acting)

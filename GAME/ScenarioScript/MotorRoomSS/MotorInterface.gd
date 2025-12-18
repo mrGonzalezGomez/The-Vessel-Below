@@ -135,6 +135,8 @@ func _on_trans_stairs_pressed() -> void:
 	get_tree().change_scene_to_file("res://ScenarioScript/MotorStairsSS/motorstairs_interface.tscn")
 
 func _on_trans_big_pressed() -> void:
+	GameState.valve_on = steam_on
+	GameState.cord_on = motor_on
 	$MetalWalking.play()
 	animator.play("transtion_bedroom")
 	await animator.animation_finished

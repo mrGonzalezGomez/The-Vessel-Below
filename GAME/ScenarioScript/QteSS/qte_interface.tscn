@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwc0j136jsgta"]
+
+[ext_resource type="Script" uid="uid://c5ha5khkc7sfc" path="res://ScenarioScript/QteSS/QteInterface.gd" id="1_bpy4p"]
+[ext_resource type="FontFile" uid="uid://dip2wk5qdyt6j" path="res://Assets/Font/Normal.TTF" id="2_xxkai"]
+[ext_resource type="Texture2D" uid="uid://co17uxty3f88q" path="res://Assets/Qte/Empty.png" id="3_uuh17"]
+[ext_resource type="Texture2D" uid="uid://dlpm2jla0iwjr" path="res://Assets/Qte/Filled.png" id="4_5lvei"]
+
+[node name="QteInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bpy4p")
+
+[node name="KeyLabel" type="Label" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xxkai")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressCircle" type="TextureProgressBar" parent="."]
+z_index = 5
+layout_mode = 1
+offset_left = 412.0
+offset_top = 240.0
+offset_right = 1692.0
+offset_bottom = 938.0
+scale = Vector2(0.25, 0.25)
+fill_mode = 4
+texture_under = ExtResource("3_uuh17")
+texture_progress = ExtResource("4_5lvei")

@@ -52,6 +52,10 @@
 - Handles pickup, display, and usage of items and notes
 - Integrated with world interactions (Items, notes)
 
+### QTE System
+- Timed input prompts during specific events
+- Difficulty scaling based on previous player choices
+
 ### Environmental Interaction
 - Objects trigger sound and visual effects
 - Flashlight system linked with light overlay
